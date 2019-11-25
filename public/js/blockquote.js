@@ -28,6 +28,7 @@ $(document).ready(function () {
       "vintage video games.",
       "npm",
       "code",
+      "magic the gathering",
       "{{handlebars}}",
       "agile",
       "Salesforce",

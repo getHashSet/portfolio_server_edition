@@ -30,9 +30,9 @@ $(document).ready(function() {
   // project 1
   ////////////
   let project_1 = new Project (
-    "Title",
-    "This is what the project was about. READ MORE >",
-    ["Node.js", "SCSS", "SQL", "NO SQL", "javascript"],
+    "Box Playground",
+    "Play around with CSS properties, and have a great time doing it too!",
+    ["HTML5", "CSS", "javascript"],
     "https://getHashSet.com",
     "../images/Title"
   );
@@ -43,9 +43,9 @@ $(document).ready(function() {
   // project 2
   ////////////
   let project_2 = new Project (
-    "Title",
-    "This is what the project was about. READ MORE >",
-    ["Node.js", "SCSS", "SQL", "NO SQL", "javascript"],
+    "README.md Builder",
+    "Building README's is a lot of work. But this handy app makes starting your documentation easier.",
+    ["HTML", "SCSS", "javascript", "API", "Markup"],
     "https://getHashSet.com",
     "../images/Title"
   );
@@ -56,9 +56,9 @@ $(document).ready(function() {
   // project 3
   ////////////
   let project_3 = new Project (
-    "Title",
-    "This is what the project was about. READ MORE >",
-    ["Node.js", "SCSS", "SQL", "NO SQL", "javascript"],
+    "Better Business Cards",
+    "Business Cards are coming back. And this is the place to build your next one",
+    ["Node.js", "SQL", "QR API"],
     "https://getHashSet.com",
     "../images/Title"
   );
@@ -121,7 +121,7 @@ $(document).ready(function() {
         let read_more = $("<span>");
         let read_more_link = $("<a>");
         read_more_link.attr("href", `${element.project_url}`);
-        read_more.html("read more");
+        read_more_link.html("read more <span>&gt;</span>");
         read_more.append(read_more_link);
         // add that to the p tag element
         info_p_tag.append(read_more);
