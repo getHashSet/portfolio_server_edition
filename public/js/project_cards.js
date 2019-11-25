@@ -140,14 +140,10 @@ $(document).ready(function() {
 
     });
 
-    ////////////
-    // Add deck to page
-    ////////////
-
+    // send final to the page.
     deckLoadsHere.append(deck);
 
   };
-
 
     // call function on page load.
     buildCard(project_array);

@@ -10,10 +10,7 @@
         </nav>
         <div>
             <h2>Design &VerticalLine; FrontEnd &VerticalLine; BackEnd </h2>
-            <h1>
-                Matthew
-                <span>Carpenter</span>
-            </h1>
+            <h1> Matthew &thinsp; <span> Carpenter </span></h1>
         </div>
     </header>
     
@@ -22,6 +19,7 @@
     {{!--              --}}
     
     <section id="c1" class="chapter">
+        <h2>Projects</h2>
         <div id="projects">
 
             {{!-- project cards are built using javascript see project_cards.js --}}
@@ -34,6 +32,21 @@
     {{!--              --}}
     
     <section id="c2" class="chapter">
+
+        {{!-- build this blockquote inside blockquote.js --}}
+        <blockquote>
+            <div>
+                <ion-icon name="quote"></ion-icon>
+            </div>
+            Working on something fun?
+            <span class="block">
+                I would love to talk about
+                <span id="blockquote" class="typewrite" data-period="2000"
+                    data-type='[ "HTML5", "CSS3", "javascript", "Node.js", "SQL" ]'>
+                    <span class="wrap"></span>
+                </span>
+            </span>
+        </blockquote>
 
     </section>
         
@@ -98,4 +111,5 @@
 
 <!-- javascript -->
 <script src="/js/index.js"> // primary animations in index.js </script>
+<script src="/js/blockquote.js"> // used for chapter 2 </script>
 <script src="/js/project_cards.js"> // used to build out project cards in chapter 1</script>

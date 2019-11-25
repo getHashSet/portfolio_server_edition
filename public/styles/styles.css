@@ -47,3 +47,15 @@ body {
 
 #hero {
   min-height: 100vh; }
+
+#c1 {
+  background-color: #f1f1f1;
+  min-height: 500px; }
+
+#c2 {
+  min-height: 300px;
+  color: #fff;
+  background-color: #3498db; }
+
+.block {
+  display: block; }
