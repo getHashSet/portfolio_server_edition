@@ -59,10 +59,11 @@ app.post("/scrape/git", function(req, res) {
     $('.js-yearly-contributions').each(function(i, element) {
       console.log($(element).children().children("h2").text());
       gitData[0].totalContributionsThisYear = Number($(element).children().children("h2").text().slice(7, $(element).children().children("h2").text().indexOf(" con")));
-
+      gitData[0].html = $(element).html();
+      // console.log($(element).html());
     });
 
-    console.log(gitData);
+    //console.log(gitData);
     res.send(gitData);
   });
 

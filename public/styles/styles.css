@@ -65,6 +65,9 @@ nav {
   min-height: 20px;
   padding: 1em 0;
   z-index: 99;
+  -webkit-transform: translateY(-101%);
+  -ms-transform: translateY(-101%);
+  transform: translateY(-101%);
   -webkit-transition: -webkit-transform .3s;
   transition: -webkit-transform .3s;
   -o-transition: transform .3s;
@@ -238,6 +241,10 @@ section {
         -ms-flex-align: end;
         align-items: flex-end; }
         #c4 .github .git_input_field span ion-icon {
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
           margin: auto;
           color: #2d3436;
           font-size: 2em; }
@@ -247,6 +254,19 @@ section {
         border: none;
         background-color: none;
         font-size: 2em; }
+      #c4 .github .git_input_field #clear {
+        position: relative;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: end;
+        -ms-flex-align: end;
+        align-items: flex-end;
+        font-size: .7em;
+        color: #1e272e; }
       #c4 .github .git_input_field input:focus {
         outline: none; }
       #c4 .github .git_input_field span:hover {
@@ -259,6 +279,28 @@ section {
         -webkit-transform: translateY(4px);
         -ms-transform: translateY(4px);
         transform: translateY(4px); }
+    #c4 .github #git_blocks .position-relative {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
+      #c4 .github #git_blocks .position-relative h2 {
+        width: 100%;
+        text-align: center;
+        margin: 1em;
+        font-weight: 500;
+        font-size: 1.5em; }
+      #c4 .github #git_blocks .position-relative .border .js-calendar-graph {
+        font-size: .55em; }
+      #c4 .github #git_blocks .position-relative .border .contrib-footer {
+        display: none; }
 
 #c5 {
   min-height: 85vh; }

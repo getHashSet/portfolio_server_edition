@@ -153,4 +153,5 @@ if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
 
 var easter_egg = new Konami(function () { 
     console.log("You have entered developer mode.");
+    $("nav").css("transform", "translateY(0)");
 });

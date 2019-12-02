@@ -6,6 +6,7 @@ $(document).ready(function() {
 
     let gitInput = $("#git_input");
     let gitPic = $("#git_pic");
+    let gitBlocks = $("#git_blocks");
 
     ////////////////////////////////////
     // git object
@@ -50,6 +51,7 @@ $(document).ready(function() {
             })
             .then(function(scrapeData){
                 console.log(scrapeData);
+                gitBlocks.html(scrapeData[0].html);
             })
             .catch(function(err){
                 console.log("Issue with Git request.");
@@ -70,7 +72,7 @@ $(document).ready(function() {
     };
 
     ////////////////////////////////////
-    // button
+    // buttons
     ////////////////////////////////////
 
     $("#git_search").click(() => {
@@ -81,6 +83,10 @@ $(document).ready(function() {
         if ($("#git_search").focus() && event.keyCode == 13 ){  
             runApiCall(gitInput[0].value.trim()); 
         }
+    });
+
+    $("#clear").click(() => {
+        $(gitInput[0].value = "");
     });
 
     ////////////////////////////////////

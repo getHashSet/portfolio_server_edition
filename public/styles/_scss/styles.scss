@@ -82,6 +82,7 @@ nav {
 	min-height: 20px;
 	padding: 1em 0;
 	z-index: 99;
+	transform: translateY(-101%);
 	transition: transform .3s;
 
 	div {
@@ -257,6 +258,7 @@ section {
 				align-items: flex-end;
 
 				ion-icon {
+					user-select: none;
 					margin: auto;
 					color: $dark;
 					font-size: 2em;
@@ -269,6 +271,15 @@ section {
 				border: none;
 				background-color: none;
 				font-size: 2em;
+			}
+
+			#clear {
+				position: relative;
+				display: flex;
+				justify-content: center;
+				align-items: flex-end;
+				font-size: .7em;
+				color: $dark_highlight;
 			}
 
 			input:focus {
@@ -284,6 +295,36 @@ section {
 				transform: translateY(4px);
 			}
 		}
+
+		#git_blocks {
+
+			.position-relative {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				flex-wrap: wrap;
+
+				h2 {
+					width: 100%;
+					text-align: center;
+					margin: 1em;
+					font-weight: 500;
+					font-size: 1.5em;
+				}
+
+				.border {
+
+					.js-calendar-graph {
+						font-size: .55em;
+					}
+			
+					.contrib-footer {
+						display: none;
+					}
+				}
+			}
+		}
+
 	}
 }
 
