@@ -65,6 +65,45 @@ $(document).ready(function() {
   // add to project_array
   project_array.push(project_3);
 
+  ////////////
+  // project 4
+  ////////////
+  let project_4 = new Project (
+    "Better Business Cards",
+    "Business Cards are coming back. And this is the place to build your next one",
+    ["Node.js", "SQL", "QR API"],
+    "https://getHashSet.com",
+    "../images/Title"
+  );
+  // add to project_array
+  project_array.push(project_4);
+
+  ////////////
+  // project 5
+  ////////////
+  let project_5 = new Project (
+    "Better Business Cards",
+    "Business Cards are coming back. And this is the place to build your next one",
+    ["Node.js", "SQL", "QR API"],
+    "https://getHashSet.com",
+    "../images/Title"
+  );
+  // add to project_array
+  project_array.push(project_5);
+
+  ////////////
+  // project 6
+  ////////////
+  let project_6 = new Project (
+    "Better Business Cards",
+    "Business Cards are coming back. And this is the place to build your next one",
+    ["Node.js", "SQL", "QR API"],
+    "https://getHashSet.com",
+    "../images/Title"
+  );
+  // add to project_array
+  project_array.push(project_6);
+
 
   //////////////////////////////////////////
   // function

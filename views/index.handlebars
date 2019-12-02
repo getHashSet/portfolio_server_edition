@@ -1,17 +1,29 @@
 <div id="main">
 
     {{!--              --}}
+    {{!--      nav     --}}
+    {{!--              --}}
+
+    <nav class="nav_menu">
+        <div>
+            <span>getHashSet.com</span>
+            <span><ion-icon name="ios-arrow-down"></ion-icon></span>
+        </div>
+    </nav>
+
+    {{!--              --}}
     {{!-- hero section --}}
     {{!--              --}}
     
     <header id="hero">
-        <nav class="nav_menu">
-
-        </nav>
+        <div id="pixel_board">
+          
+        </div>
         <div>
             <h2>Design &VerticalLine; FrontEnd &VerticalLine; BackEnd </h2>
-            <h1> Matthew &thinsp; <span> Carpenter </span></h1>
+            <h1> Matthew <span> Carpenter </span></h1>
         </div>
+
     </header>
     
     <div class="accessability">
@@ -23,10 +35,11 @@
     {{!--              --}}
     {{!--  chapter 1   --}}
     {{!--              --}}
-    
+
     <section id="c1" class="chapter">
-        <h2>Projects</h2>
         <div id="projects">
+
+        <h2>Projects</h2>
 
             {{!-- project cards are built using javascript see project_cards.js --}}
 
@@ -40,13 +53,12 @@
     <section id="c2" class="chapter">
 
         {{!-- build this blockquote inside blockquote.js --}}
+        <div>
+            <ion-icon name="quote"></ion-icon>
+        </div>
         <blockquote>
-            <div>
-                <ion-icon name="quote"></ion-icon>
-            </div>
-            Working on something fun?
-            <span class="block">
-                I would love to talk about
+            <span>
+                I would love to talk about &MediumSpace;
                 <span id="blockquote" class="typewrite" data-period="2000"
                     data-type='[ "HTML5", "CSS3", "javascript", "Node.js", "SQL" ]'>
                     <span class="wrap"></span>
@@ -77,6 +89,22 @@
         {{!-- recent projects (QR code API) --}}
         {{!-- recent comment --}}
 
+        <div class="github">
+
+            <div class="git_input_field">
+                <span id="git_search">
+                    <ion-icon name="ios-search"></ion-icon>
+                </span>
+                <input id="git_input" type="text" value="getHashSet" placeholder="GitHub Username">       
+            </div>
+           
+            <div>
+                <div id="git_pic"  class="img_warp">
+                </div>
+            </div>
+
+        </div>
+
     </section>
 
     {{!--              --}}
@@ -84,6 +112,10 @@
     {{!--              --}}
     
     <section id="c5" class="chapter">
+
+        <div class="blocker">
+            <div><ion-icon name="ios-lock"></ion-icon></div>
+        </div>
 
         {{!-- scroll magic section with code blocks --}}
 
@@ -98,6 +130,8 @@
         {{!-- left side menu pop out BACK TO TOP --}}
 
         {{!-- Google Analytics  --}}
+        {{!-- ads --}}
+        {{!-- marketing --}}
 
     </section>
 
@@ -142,4 +176,6 @@
 <!-- javascript -->
 <script src="/js/index.js"> // primary animations in index.js </script>
 <script src="/js/blockquote.js"> // used for chapter 2 </script>
+<script src="/js/konami.js"> // for log in</script>
+<script src="/js/git.js"> // for Github API calls </script>
 <script src="/js/project_cards.js"> // used to build out project cards in chapter 1</script>

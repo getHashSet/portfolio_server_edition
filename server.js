@@ -1,9 +1,14 @@
 require("dotenv").config();
-var express = require("express");
-var exphbs = require("express-handlebars");
+const express = require("express");
+const exphbs = require("express-handlebars");
+const logger = require("morgan");
+const mongoose = require("mongoose");
+const axios = require("axios");
+const cheerio = require("cheerio");
 
-var db = require("./models");
+const db = require("./models");
 
+// Express / localhost and Heroku port
 var app = express();
 var PORT = process.env.PORT || 3000;
 
@@ -11,6 +16,10 @@ var PORT = process.env.PORT || 3000;
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(express.static("public"));
+app.use(logger("dev"));
+
+// Connect to local Mongo DB
+mongoose.connect("mongodb://localhost/unit18Populater", { useNewUrlParser: true });
 
 // Handlebars
 app.engine(
@@ -32,6 +41,11 @@ var syncOptions = { force: false };
 if (process.env.NODE_ENV === "test") {
   syncOptions.force = true;
 }
+
+// Scrape GitHub
+app.get("/scrape/:git", function(req, res) {
+  console.log(req.params.git);
+});
 
 // Starting the server, syncing our models ------------------------------------/
 db.sequelize.sync(syncOptions).then(function() {
