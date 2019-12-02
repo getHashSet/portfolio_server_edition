@@ -20,13 +20,19 @@ $(document).ready(function() {
     // api
     ////////////////////////////////////
 
+    // 1: collect userName and call the public API for data.
+    // 2: use that data to fill the gitObj with key: values
+    // 3: use that obj to update the page.
+    // 4: 2nd Call will send a POST request that will tell cheerio to scrape git for the non-public data.
+    // 5: 3rd Call will fill the object with git project data. That data will populate clicks from the obj.
+    // 6: build a cookie that keeps that data local to the user.
     const runApiCall = (userName) => {
         $.ajax({
             url: `https://api.github.com/users/${userName}`,
             method: "GET"
         })
         .then(function(data){
-            console.log(data);
+            //console.log(data);
 
             gitObj.img = data.avatar_url;
             gitObj.company = data.company;
@@ -38,8 +44,9 @@ $(document).ready(function() {
 
             // Second Call is to scrape Git for data;
             $.ajax({
-                url: `/scrap/${gitObj.link}`,
-                method: "GET"
+                url: `/scrape/git`,
+                method: "POST",
+                data: { git: gitObj.link}
             })
             .then(function(scrapeData){
 

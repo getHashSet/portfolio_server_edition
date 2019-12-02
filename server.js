@@ -43,8 +43,10 @@ if (process.env.NODE_ENV === "test") {
 }
 
 // Scrape GitHub
-app.get("/scrape/:git", function(req, res) {
-  console.log(req.params.git);
+// set POST request so that we can recive an obj with keys.
+// use those keys to search the internet for more data.
+app.post("/scrape/git", function(req, res) {
+  console.log(req.body.git);
 });
 
 // Starting the server, syncing our models ------------------------------------/
