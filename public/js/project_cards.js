@@ -69,9 +69,9 @@ $(document).ready(function() {
   // project 4
   ////////////
   let project_4 = new Project (
-    "Better Business Cards",
-    "Business Cards are coming back. And this is the place to build your next one",
-    ["Node.js", "SQL", "QR API"],
+    "Banner Ads",
+    "Google Ads made to order",
+    ["HTML", "SCSS", "QR API"],
     "https://getHashSet.com",
     "../images/Title"
   );
@@ -82,9 +82,9 @@ $(document).ready(function() {
   // project 5
   ////////////
   let project_5 = new Project (
-    "Better Business Cards",
-    "Business Cards are coming back. And this is the place to build your next one",
-    ["Node.js", "SQL", "QR API"],
+    "Wedding Website",
+    "Get ready for your big day.",
+    ["Node.js", "SQL", "API", "HTML"],
     "https://getHashSet.com",
     "../images/Title"
   );
@@ -95,9 +95,9 @@ $(document).ready(function() {
   // project 6
   ////////////
   let project_6 = new Project (
-    "Better Business Cards",
-    "Business Cards are coming back. And this is the place to build your next one",
-    ["Node.js", "SQL", "QR API"],
+    "Comming Soon",
+    "Business webpage.",
+    ["Node.js", "no SQL", "API", "Handlebars"],
     "https://getHashSet.com",
     "../images/Title"
   );

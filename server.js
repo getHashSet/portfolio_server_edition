@@ -46,7 +46,27 @@ if (process.env.NODE_ENV === "test") {
 // set POST request so that we can recive an obj with keys.
 // use those keys to search the internet for more data.
 app.post("/scrape/git", function(req, res) {
-  console.log(req.body.git);
+  // view object returned on the server. //
+  // console.log(req.body.git);
+
+  axios.get(req.body.git)
+  .then(function(responseFromGit) {
+    //console.log(responseFromGit.data);
+    let $ = cheerio.load(responseFromGit.data);
+
+    let gitData = [{key: "value"}];
+
+    $('.js-yearly-contributions').each(function(i, element) {
+      console.log($(element).children().children("h2").text());
+      gitData[0].totalContributionsThisYear = Number($(element).children().children("h2").text().slice(7, $(element).children().children("h2").text().indexOf(" con")));
+
+    });
+
+    console.log(gitData);
+    res.send(gitData);
+  });
+
+
 });
 
 // Starting the server, syncing our models ------------------------------------/

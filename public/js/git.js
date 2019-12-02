@@ -49,7 +49,7 @@ $(document).ready(function() {
                 data: { git: gitObj.link}
             })
             .then(function(scrapeData){
-
+                console.log(scrapeData);
             })
             .catch(function(err){
                 console.log("Issue with Git request.");
