@@ -45,6 +45,9 @@ table {
 body {
   font-family: "Livvic", sans-serif; }
 
+section {
+  position: relative; }
+
 nav {
   color: #fff;
   background-color: rgba(45, 52, 54, 0.7);
@@ -79,11 +82,59 @@ nav {
     max-width: 1200px;
     height: 1em; }
     nav div span:first-child {
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
       position: absolute;
       left: 0; }
     nav div span:last-child {
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
       position: absolute;
-      right: 0; }
+      right: 0;
+      bottom: 0; }
+    nav div span:last-child:hover {
+      cursor: pointer; }
+    nav div span:last-child:active {
+      -webkit-transform: translateY(4px);
+      -ms-transform: translateY(4px);
+      transform: translateY(4px); }
+    nav div #login {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
+      nav div #login input {
+        border: none;
+        background: none;
+        color: #fff;
+        border-bottom: 1px solid #ecf0f1;
+        width: 30%;
+        margin: 0 1em; }
+      nav div #login input:focus {
+        outline: 2px solid #ecf0f1;
+        outline-offset: 4px; }
+      nav div #login span {
+        position: relative;
+        display: inline-block;
+        color: #fff; }
+        nav div #login span ion-icon {
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none; }
+        nav div #login span ion-icon:focus {
+          outline: none; }
+      nav div #login span:focus {
+        outline: 2px solid #fff;
+        outline-offset: 4px; }
 
 #hero {
   min-height: 100vh;
@@ -165,7 +216,7 @@ section {
   padding: 2em;
   text-align: left;
   overflow: hidden; }
-  #c2 div {
+  #c2 div:first-child {
     position: absolute;
     top: 0;
     left: 0;
@@ -322,5 +373,71 @@ section {
       font-size: 10em;
       color: #ecf0f1; }
 
+#user-activity-overview {
+  display: none; }
+
 .block {
   display: block; }
+
+.info {
+  position: absolute;
+  font-size: 1.2em;
+  top: 0;
+  right: 0;
+  width: 1em;
+  height: 1em;
+  padding: .5em;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border-radius: 5px 0 0 5px;
+  margin: 1em 0 1em 1em;
+  background-color: rgba(45, 52, 54, 0.7);
+  color: #fff;
+  -webkit-transition: -webkit-transform .5s;
+  transition: -webkit-transform .5s;
+  -o-transition: transform .5s;
+  transition: transform .5s;
+  transition: transform .5s, -webkit-transform .5s;
+  display: none; }
+
+.info:hover {
+  cursor: pointer; }
+
+.info:active ion-icon {
+  -webkit-transform: translateY(4px);
+  -ms-transform: translateY(4px);
+  transform: translateY(4px); }
+
+.bounce_small {
+  -webkit-animation-name: bounce_small;
+  animation-name: bounce_small;
+  -webkit-animation-timing-function: ease;
+  animation-timing-function: ease;
+  -webkit-animation: bounce_small .7s;
+  animation: bounce_small .7s;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite; }
+
+@-webkit-keyframes bounce_small {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0); }
+  50% {
+    -webkit-transform: translateY(-3px);
+    transform: translateY(-3px); }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0); } }
+
+@keyframes bounce_small {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0); }
+  50% {
+    -webkit-transform: translateY(-3px);
+    transform: translateY(-3px); }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0); } }

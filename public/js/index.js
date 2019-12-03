@@ -97,3 +97,34 @@ var handleDeleteBtnClick = function() {
 // Add event listeners to the submit and delete buttons
 $submitBtn.on("click", handleFormSubmit);
 $exampleList.on("click", ".delete", handleDeleteBtnClick);
+
+////////////
+// buttons
+////////////
+
+$("#menu_button").click(function() {
+  $("nav").css("transform", "translateY(-101%)");
+  $("#info").css("display", "none");
+  console.log("bye bye");
+});
+
+$("#login_button").click(function() {
+  badPassword();
+});
+
+$("#password").keyup(function(event) {
+  if(event.keyCode === 13) {
+    badPassword();
+  };
+});
+
+$("#login-button").keyup(function(event) {
+  if(event.keyCode === 13) {
+    badPassword();
+  };
+});
+
+const badPassword = () => {
+  $("#ion-icon_button").attr("name", "ios-thumbs-down");
+  $("#login_button").addClass("bounce_small");
+};

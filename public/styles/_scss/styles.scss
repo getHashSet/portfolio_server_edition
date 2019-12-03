@@ -63,6 +63,9 @@ body {
     font-family: $font;
 }
 
+section {
+	position: relative;
+}
 
 //////////////////////////////////////////////////
 // nav
@@ -92,13 +95,63 @@ nav {
 		height: 1em;
 
 		span:first-child {
+			user-select: none;
 			position: absolute;
 			left: 0;
 		}
 
 		span:last-child {
+			user-select: none;
 			position: absolute;
 			right: 0;
+			bottom: 0;
+		}
+
+		span:last-child:hover {
+			cursor: pointer;
+		}
+
+		span:last-child:active {
+			transform: translateY(4px);
+		}
+
+		#login {
+			display: flex;
+			justify-content: center;
+			flex-wrap: wrap;
+
+			input {
+				border: none;
+				background: none;
+				color: #fff;
+				border-bottom: 1px solid $light;
+				width: 30%;
+				margin: 0 1em;
+			}
+
+			input:focus {
+				outline: 2px solid $light;
+				outline-offset: 4px;
+			}
+
+			span {
+				position: relative;
+				display: inline-block;
+				color: #fff;
+
+				ion-icon {
+					user-select: none;
+				}
+
+				ion-icon:focus {
+					outline: none;
+				}
+			}
+
+			span:focus {
+				outline: 2px solid #fff;
+				outline-offset: 4px;
+			}
 		}
 	}
 }
@@ -189,7 +242,7 @@ section {
 	text-align: left;
 	overflow: hidden;
 		
-	div { 
+	div:first-child { 
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -351,6 +404,55 @@ section {
 // global
 //////////////////////////////////////////////////
 
+#user-activity-overview {
+	display: none;
+}
+
 .block {
 	display: block;
 }
+
+.info {
+	position: absolute;
+	font-size: 1.2em;
+	top: 0;
+	right: 0;
+	width: 1em;
+	height: 1em;
+	padding: .5em;
+	user-select: none;
+	border-radius: 5px 0 0 5px;
+	margin: 1em 0 1em 1em;
+	background-color: rgba($dark, .7);
+	color: #fff;
+	transition: transform .5s;
+	display: none;
+}
+
+.info:hover{
+	cursor: pointer;
+}
+
+.info:active ion-icon {
+	transform: translateY(4px);
+}
+
+
+//////////////////////////////////////////////////
+// key frames
+//////////////////////////////////////////////////
+
+
+.bounce_small {
+	animation-name: bounce_small;
+	animation-timing-function: ease;
+	animation: bounce_small .7s;
+	animation-iteration-count: infinite;
+}
+
+@keyframes bounce_small {
+	0%   { transform: translateY(0); }
+	50%  { transform: translateY(-3px); }
+	100% { transform: translateY(0); }
+}
+
