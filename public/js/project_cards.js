@@ -114,6 +114,8 @@ $(document).ready(function() {
     let deck = $("<div>");
     deck.addClass("deck");
 
+    let cardNumber = 1;
+
     // if array length is less than 1, do nothing, else start building the cards.
     arr.length < 1 ? null :
     // for each element in the arr build the card.
@@ -122,6 +124,8 @@ $(document).ready(function() {
         // make card wrap
         let card = $("<div>");
         card.addClass("card");
+        card.attr("id", `card_${cardNumber}`);
+        cardNumber++;
 
         // add div for img and set background to this elements image_url key then add it to the card.
         let art = $("<div>");

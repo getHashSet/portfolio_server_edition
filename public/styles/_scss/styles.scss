@@ -53,6 +53,7 @@ table {
 //////////////////////////////////////////////////
 
 @import "__vars";
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,900");
 
 //////////////////////////////////////////////////
 // main
@@ -248,6 +249,7 @@ section {
 		left: 0;
 		font-size: 5em;
 		padding: 5%;
+		opacity: .5;
 	}
 
 	blockquote {
@@ -256,11 +258,17 @@ section {
 		display: flex;
 		flex-wrap: wrap;
 		align-items: center;
-		transform: translateX(-20%);
 
-		span {
-			span { 
-				position: absolute;
+		span:first-child {
+			display: inline-block;
+		}
+
+		span:last-child {
+			display: inline-block;
+			width: 5em;
+			border: none;
+			
+			span {
 				display: inline-block;
 			}
 		}
@@ -455,4 +463,3 @@ section {
 	50%  { transform: translateY(-3px); }
 	100% { transform: translateY(0); }
 }
-
