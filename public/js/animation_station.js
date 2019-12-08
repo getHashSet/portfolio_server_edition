@@ -10,7 +10,8 @@ $( document ).ready(function() {
         card3: $("#card_3"),
         card4: $("#card_4"),
         card5: $("#card_5"),
-        card6: $("#card_6")
+        card6: $("#card_6"),
+        family: $("#about_family")
     }
     
     
@@ -19,10 +20,12 @@ $( document ).ready(function() {
 
     const controller = new ScrollMagic.Controller();
     
+    tl.from([greenSock.family], .5, {y: 200, opacity: 0});
+
     const scene = new ScrollMagic.Scene({
         triggerElement: ".magic_pin_1",
         triggerHook: "onLeave",
-        duration: "100%"
+        duration: "150%"
     })
     .setPin(".magic_pin_1")
     .setTween(tl)

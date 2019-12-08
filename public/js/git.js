@@ -35,13 +35,28 @@ $(document).ready(function() {
         .then(function(data){
             console.log(data);
 
+            // img
             gitObj.img = data.avatar_url;
+
+            // where you work
             data.company ? gitObj.company = data.company : gitObj.company = "";
+
+            // how many followers
             gitObj.followers = data.followers;
+
+            // link to github
             gitObj.link = data.html_url;
+
+            // displayed as hireable?
             data.hireable ? gitObj.hireable = true : gitObj.hireable = false;
+
+            // real name?
             data.name ? gitObj.name = data.name : gitObj.name = data.login;
+
+            // summary?
             data.bio.length >= 8 ? gitObj.bio = data.bio : gitObj.bio = "Learn more by visiting my github.";
+
+            // link to personal url
             data.blog ? gitObj.website = data.blog : gitObj.website = data.html_url;
             
             // Tell the page to update the data.
@@ -62,7 +77,7 @@ $(document).ready(function() {
                 gitBlocks.html(scrapeData[0].html);
 
                 // make pinned items
-                makePinnedItems(scrapeData[0].gitImages);
+                makePinnedItems(scrapeData[0].gitImages, scrapeData[0].pinnedObjects);
             })
             .catch(function(err){
                 console.log("Issue with Git request.");
@@ -82,19 +97,46 @@ $(document).ready(function() {
 
     const updateData = (obj) => {
         gitPic.attr("style", `background-image: url(${obj.img})`);
+
+        // fill in bio
+        $(".bio").html(obj.bio);
     };
 
-    const makePinnedItems = (arr) => {
+    const makePinnedItems = (arr, names) => {
         //console.log("what up dog" + arr);
         let putThemHere = $("#git_pinned_items");
 
         let newWrapperDiv = $("<div>");
         newWrapperDiv.addClass("git_pinned_items");
 
+        let pinned_item = 0;
+
         arr.forEach(item => {
-           //newWrapperDiv.append(gitColorBlocks(item));
-           let imgTag = item.toString().replace("img", "img class=git_pinned");
-           newWrapperDiv.append(imgTag);
+
+            console.log("youre doing it peter");
+
+            //make a new div.
+           let gitCard = $("<div>");
+           gitCard.addClass("git_card");
+
+           let imgTag = item.toString().replace("img", "img class=git_pinned_img");
+           // make a string out of the item in this array.
+           //let imgTag = item.toString()
+           // get the name of the project.
+           let git_h3Tag = `<h3>${names[pinned_item]}</h3>`;
+
+           // add the img to git card
+           // add a title to the card
+           gitCard.append(imgTag);
+           gitCard.append(git_h3Tag);
+
+           names[pinned_item] == null ? null : 
+
+           // add the card to the wrap div.
+           newWrapperDiv.append(gitCard);
+
+           // 
+           pinned_item++;
         });
 
         putThemHere.html(newWrapperDiv);

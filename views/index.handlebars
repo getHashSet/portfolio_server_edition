@@ -9,24 +9,26 @@
             <span>getHashSet.com</span>
 
             <div id="login">
-                <input id="user_name"type="text" placeholder="email" tabindex="1">
+                <input id="user_name" type="text" placeholder="email" tabindex="1">
                 <input id="password" type="password" placeholder="password" tabindex="2">
                 <span id="login_button" tabindex="3">
                     <ion-icon id="ion-icon_button" name="ios-thumbs-up" tabindex="-1"></ion-icon>
                 </span>
             </div>
 
-            <span id="menu_button"><ion-icon name="ios-arrow-up"></ion-icon></span>
+            <span id="menu_button">
+                <ion-icon name="ios-arrow-up"></ion-icon>
+            </span>
         </div>
     </nav>
 
     {{!--              --}}
     {{!-- hero section --}}
     {{!--              --}}
-    
+
     <header id="hero">
         <div id="pixel_board">
-          
+
         </div>
         <div>
             <h2>Design &VerticalLine; FrontEnd &VerticalLine; BackEnd </h2>
@@ -34,9 +36,9 @@
         </div>
 
     </header>
-    
+
     <div class="accessability">
-        
+
         {{!-- menu for accessability --}}
 
     </div>
@@ -48,33 +50,36 @@
     <section id="c1" class="chapter">
         <div id="projects">
 
-        <h2>Projects</h2>
+            <h2>Projects</h2>
 
             {{!-- project cards are built using javascript see project_cards.js --}}
 
         </div>
+
+        <div class="block_bottom">
 
         <div class="info">
             <ion-icon name="quote"></ion-icon>
         </div>
 
     </section>
-    
+
     {{!--              --}}
     {{!--  chapter 2   --}}
     {{!--              --}}
-    
+
     <section id="c2" class="chapter">
 
         {{!-- build this blockquote inside blockquote.js --}}
         <div>
             <ion-icon name="quote"></ion-icon>
         </div>
-        
+
         <blockquote>
             <span>I would love to talk about &thinsp; </span>
             <span>
-                <span id="blockquote" class="typewrite" data-period="2000" data-type='[ "HTML5", "CSS3", "javascript" ]'></span>
+                <span id="blockquote" class="typewrite" data-period="2000"
+                    data-type='[ "HTML5", "CSS3", "javascript" ]'></span>
             </span>
         </blockquote>
 
@@ -83,22 +88,26 @@
         </div>
 
     </section>
-        
+
     {{!--              --}}
     {{!--  chapter 3   --}}
     {{!--              --}}
-    
+
     <section id="c3" class="chapter">
 
         {{!-- frameworks and libraries  --}}
 
     </section>
-        
+
     {{!--              --}}
     {{!--  chapter 4   --}}
     {{!--              --}}
-    
+
     <section id="c4" class="chapter">
+
+        <div class="block_top">
+
+        </div>
 
         {{!-- github API calls, Scrape github.com/getHashSet --}}
         {{!-- commit box --}}
@@ -111,15 +120,16 @@
                 <span id="git_search">
                     <ion-icon name="ios-search"></ion-icon>
                 </span>
-                <input id="git_input" type="text" value="getHashSet" placeholder="GitHub Username">   
+                <input id="git_input" type="text" value="getHashSet" placeholder="GitHub Username">
                 <span id="clear">
                     <ion-icon name="close"></ion-icon>
-                </span>    
+                </span>
             </div>
-           
-            <div>
-                <div id="git_pic"  class="img_warp">
+
+            <div class="git_id">
+                <div id="git_pic" class="img_warp">
                 </div>
+                <p class="bio"></p>
             </div>
 
             <div id="git_blocks">
@@ -141,11 +151,44 @@
     {{!--              --}}
     {{!--  chapter 5   --}}
     {{!--              --}}
-    
+
     <section id="c5" class="chapter">
 
-        <div class="blocker">
-            <div><ion-icon name="ios-lock"></ion-icon></div>
+        <h2>Work History</h2>
+
+        <div class="timeline_box">
+            <div class="timeline">
+                <div id="year_2007" class="time_box">
+                    <div>
+                        <div class="line_up"></div>
+                        <div class="large_frame">
+                            <div class="med_frame">
+                                <div class="small_frame"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="year_2011" class="time_box">
+                    <div>
+                        <div class="line_down"></div>
+                        <div class="small_frame">
+                            <div class="med_frame">
+                                <div class="large_frame"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="year_2019" class="time_box">
+                    <div>
+                        <div class="line_up"></div>
+                        <div class="small_frame">
+                            <div class="med_frame">
+                                <div class="large_frame"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         {{!-- scroll magic section with code blocks --}}
@@ -155,11 +198,11 @@
         </div>
 
     </section>
-    
+
     {{!--              --}}
     {{!--  chapter 6   --}}
     {{!--              --}}
-    
+
     <section id="c6" class="chapter">
 
         {{!-- left side menu pop out BACK TO TOP --}}
@@ -167,6 +210,15 @@
         {{!-- Google Analytics  --}}
         {{!-- ads --}}
         {{!-- marketing --}}
+
+        <div id="about_me" class="magic_pin_1">
+
+            <div id="about_family" class="about_section">
+                <h2>Family Man</h2>
+                <p>I love my family.</p>
+            </div>
+            
+        </div>
 
         <div class="info">
             <ion-icon name="quote"></ion-icon>
@@ -182,12 +234,12 @@
 
         {{!-- About Me --}}
 
-    </section>    
-    
+    </section>
+
     {{!--              --}}
     {{!--  chapter 8   --}}
     {{!--              --}}
-    
+
     <section id="c8" class="chapter">
 
         {{!-- locked --}}
@@ -210,7 +262,8 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.js"></script>
+<script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.js"></script>
 
 <!-- javascript -->
 <script src="/js/index.js"> // root js file </script>

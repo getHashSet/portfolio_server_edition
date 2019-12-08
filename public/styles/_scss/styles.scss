@@ -219,14 +219,33 @@ section {
 			flex-wrap: wrap;
 			justify-content: center;
 			align-items: center;
+			margin-bottom: 160px;
+			z-index: 2;
 
 			.card {
 				width: 30%;
+				min-width: 300px;
 				height: 300px;
 				background-color: #fff;
 				margin: 1%;
+				z-index: 3;
 			}
 		}
+	}
+
+	.block_bottom {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 400px;
+		user-select: none;
+		z-index: 1;
+		background-image: url(../../images/blue_top.png);
+		background-size: cover;
+		background-position: top center;
+		transform: rotate(180deg);
+
 	}
 }
 
@@ -278,16 +297,34 @@ section {
 #c4 {
 	padding: 1em 0;
 	
+	.block_top {
+		width: 100%;
+		height: 400px;
+		background-image: url(../../images/blue_top.png);
+		background-size: cover;
+		position: absolute;
+		background-position: top center;
+		background-repeat: no-repeat;
+		top: 0;
+		left: 0;
+
+	}
+
 	.github {
 		width: 100%;
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
 
+		div:first-child {
+			flex-wrap: nowrap;
+		}
+
 		div {
 			width: 100%;
 			display: flex;
 			justify-content: center;
+			flex-wrap: wrap;
 
 			#git_pic {
 				width: 256px;
@@ -298,6 +335,15 @@ section {
 				background-position: center center;
 				background-size: cover;
 				filter: grayscale(.8);
+				outline-offset: 8px;
+				outline: 4px solid $success;
+			}
+
+			p {
+				width: 100%;
+				justify-content: center;
+				text-align: center;
+				padding: 3em;
 			}
 		}
 
@@ -305,9 +351,11 @@ section {
 			position: relative;
 			width: 50%;
 			height: 3em;
+			margin: 80px 3em 3em 3em;
 			line-height: 1.5em;
 			background-color: #fff;
 			border-bottom: 1px solid $dark;
+			padding-left: 1em;
 
 			span {
 				position: absolute;
@@ -360,12 +408,37 @@ section {
 		.git_pinned_items {
 			max-width: 800px;
 			display: flex;
+			flex-wrap: wrap;
 			justify-content: space-between;
-			align-items: center;
+			align-items: flex-start;
 			margin: 1em 0;
 
-			.git_pinned {
-				width: 25%;
+			.git_card {
+				width: 200px;
+				flex-wrap: wrap;
+				text-align: center;
+				margin: 12px;
+				overflow: hidden;
+				
+				.git_pinned_img {
+					width: 100%;
+					margin: 8px;
+				}
+
+				h3 {
+					font-size: 1em;
+					font-weight: 700;
+					width: 100%;
+				}
+			}
+
+			.git_card:hover .git_pinned_img {
+				cursor: pointer;
+				box-shadow: 1px 1px 3px $dark;
+			}
+
+			.git_card:active .git_pinned_img {
+				transform: translateY(4px);
 			}
 		}
 
@@ -402,20 +475,141 @@ section {
 }
 
 #c5 {
-	min-height: 85vh;
+	width: 100%;
+	height: 80vh;
+	background-color: $light;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
 
-	.blocker {
-		width: 100vw;
-		height: 85vh;
-		color: $light;
-		background-color: rgba($dark, .7);
+	h2 {
+		font-size: 3em;
+		line-height: 2em;
+		position: absolute;
+		top: 0;
+		left: 50%;
+		transform: translateX(-50%);
+		color: $light_highlight;
+		text-transform: uppercase;
+	}
+
+	.timeline_box {
+		width: 100%;
+		height: 100%;
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		overflow: hidden;
 
-		div {
-			font-size: 10em;
-			color: $light;
+		.timeline {
+			width: 100%;
+			height: 0;
+			border-bottom: 1px solid $light_highlight;
+			z-index: 2;
+				
+			#year_2007 {
+				position: absolute;
+				left: 10%;
+				background-color: $primary;
+			}
+
+			#year_2011 {
+				position: absolute;
+				left: 40%;
+				background-color: $success;
+			}
+
+			#year_2019 {
+				position: absolute;
+				left: 80%;
+				background-color: #3498db;
+			}
+	
+			.time_box {
+				background-color: inherit;
+				transform: translateY(-50%);
+				display: flex;
+				justify-content: center;
+				align-items: center;
+
+				div {
+					width: 1em;
+					height: 1em;
+					display: block;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+
+					.small_frame {
+						border: 1px solid $dark;
+						width: 2em;
+						height: 2em;
+						display: flex;
+						justify-content: center;
+						align-items: center;
+					}
+
+					.med_frame {
+						border: 1px solid $dark;
+						width: 3em;
+						height: 3em;
+						display: flex;
+						justify-content: center;
+						align-items: center;
+					}
+
+					.large_frame {
+						border: 1px solid $dark;
+						width: 5em;
+						height: 1.5em;
+						display: flex;
+						justify-content: center;
+						align-items: center;
+					}
+
+					.line_up {
+						border-left: 1px solid $dark;
+						height: 10em;
+						width: 0;
+						position: absolute;
+						left: 50%;
+						top: 0;
+						transform: translate(-50%,-100%);
+					}
+
+					.line_down {
+						border-left: 1px solid $dark;
+						height: 10em;
+						width: 0;
+						position: absolute;
+						left: 50%;
+						bottom: 0;
+						transform: translate(-50%,100%);
+					}
+
+				}
+			}
+
+			.time_box:hover {
+				cursor: pointer;
+			}
+		}
+	}
+}
+
+#c6 {
+	display: block;
+	min-height: 100vh;
+	width: 100%;
+	background-color: #fff;
+
+	#about_me {
+		min-height: 100%;
+		
+		.about_section {
+			position: absolute;
+			left: 30%;
+			bottom: 30%;
 		}
 	}
 }
