@@ -33,17 +33,24 @@ $(document).ready(function() {
             method: "GET"
         })
         .then(function(data){
-            //console.log(data);
+            console.log(data);
 
             gitObj.img = data.avatar_url;
-            gitObj.company = data.company;
+            data.company ? gitObj.company = data.company : gitObj.company = "";
             gitObj.followers = data.followers;
             gitObj.link = data.html_url;
+            data.hireable ? gitObj.hireable = true : gitObj.hireable = false;
+            data.name ? gitObj.name = data.name : gitObj.name = data.login;
+            data.bio.length >= 8 ? gitObj.bio = data.bio : gitObj.bio = "Learn more by visiting my github.";
+            data.blog ? gitObj.website = data.blog : gitObj.website = data.html_url;
             
             // Tell the page to update the data.
             updateData(gitObj);
 
+            ////////////
             // Second Call is to scrape Git for data;
+            ////////////
+
             $.ajax({
                 url: `/scrape/git`,
                 method: "POST",
@@ -51,7 +58,11 @@ $(document).ready(function() {
             })
             .then(function(scrapeData){
                 console.log(scrapeData);
+
                 gitBlocks.html(scrapeData[0].html);
+
+                // make pinned items
+                makePinnedItems(scrapeData[0].pinnedObjects);
             })
             .catch(function(err){
                 console.log("Issue with Git request.");
@@ -69,6 +80,43 @@ $(document).ready(function() {
 
     const updateData = (obj) => {
         gitPic.attr("style", `background-image: url(${obj.img})`);
+    };
+
+    const makePinnedItems = (arr) => {
+        //console.log("what up dog" + arr);
+        let putThemHere = $("#git_pinned_items");
+
+        let newWrapperDiv = $("<div>");
+        newWrapperDiv.addClass("git_pinned_items");
+
+        arr.forEach(item => {
+           newWrapperDiv.append(gitColorBlocks(item));
+        });
+
+        putThemHere.html(newWrapperDiv);
+    };
+
+    const gitColorBlocks = (str) => {
+        // create a 200 x 200 block by giving it class git_block
+        let newDiv = $("<div>");
+        newDiv.addClass("git_color_block");
+        newDiv.attr("name", str);
+
+        // add random jdenticon to block because its fun.  
+        // be sure to include the following script in the index.html
+        // <script src="https://cdn.jsdelivr.net/npm/jdenticon@2.2.0" async> //used for jdenticon in git section </script>
+        let newSvg = $("<svg>");
+        // add attribute with project name as the value.
+        newSvg.attr("data-jdenticon-value",str);
+        newSvg.css("width", "200");
+        newSvg.css("height", "200");
+        newSvg.css("background-color", "#f1f1f1");
+
+        // add the SVG to the div we created.
+        newDiv.append(newSvg);
+
+        return newDiv;
+
     };
 
     ////////////////////////////////////
