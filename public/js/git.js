@@ -62,7 +62,7 @@ $(document).ready(function() {
                 gitBlocks.html(scrapeData[0].html);
 
                 // make pinned items
-                makePinnedItems(scrapeData[0].pinnedObjects);
+                makePinnedItems(scrapeData[0].gitImages);
             })
             .catch(function(err){
                 console.log("Issue with Git request.");
@@ -74,9 +74,11 @@ $(document).ready(function() {
         });
     };
 
+
     ////////////////////////////////////
     // functions
     ////////////////////////////////////
+
 
     const updateData = (obj) => {
         gitPic.attr("style", `background-image: url(${obj.img})`);
@@ -90,38 +92,19 @@ $(document).ready(function() {
         newWrapperDiv.addClass("git_pinned_items");
 
         arr.forEach(item => {
-           newWrapperDiv.append(gitColorBlocks(item));
+           //newWrapperDiv.append(gitColorBlocks(item));
+           let imgTag = item.toString().replace("img", "img class=git_pinned");
+           newWrapperDiv.append(imgTag);
         });
 
         putThemHere.html(newWrapperDiv);
     };
 
-    const gitColorBlocks = (str) => {
-        // create a 200 x 200 block by giving it class git_block
-        let newDiv = $("<div>");
-        newDiv.addClass("git_color_block");
-        newDiv.attr("name", str);
-
-        // add random jdenticon to block because its fun.  
-        // be sure to include the following script in the index.html
-        // <script src="https://cdn.jsdelivr.net/npm/jdenticon@2.2.0" async> //used for jdenticon in git section </script>
-        let newSvg = $("<svg>");
-        // add attribute with project name as the value.
-        newSvg.attr("data-jdenticon-value",str);
-        newSvg.css("width", "200");
-        newSvg.css("height", "200");
-        newSvg.css("background-color", "#f1f1f1");
-
-        // add the SVG to the div we created.
-        newDiv.append(newSvg);
-
-        return newDiv;
-
-    };
 
     ////////////////////////////////////
     // buttons
     ////////////////////////////////////
+
 
     $("#git_search").click(() => {
         runApiCall(gitInput[0].value.trim());  

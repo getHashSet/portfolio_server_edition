@@ -357,6 +357,18 @@ section {
 			}
 		}
 
+		.git_pinned_items {
+			max-width: 800px;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			margin: 1em 0;
+
+			.git_pinned {
+				width: 25%;
+			}
+		}
+
 		#git_blocks {
 
 			.position-relative {
