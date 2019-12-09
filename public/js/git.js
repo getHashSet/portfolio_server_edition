@@ -33,7 +33,7 @@ $(document).ready(function() {
             method: "GET"
         })
         .then(function(data){
-            console.log(data);
+            //console.log(data);
 
             // img
             gitObj.img = data.avatar_url;
@@ -72,7 +72,7 @@ $(document).ready(function() {
                 data: { git: gitObj.link}
             })
             .then(function(scrapeData){
-                console.log(scrapeData);
+                //console.log(scrapeData);
 
                 gitBlocks.html(scrapeData[0].html);
 
@@ -112,8 +112,6 @@ $(document).ready(function() {
         let pinned_item = 0;
 
         arr.forEach(item => {
-
-            console.log("youre doing it peter");
 
             //make a new div.
            let gitCard = $("<div>");

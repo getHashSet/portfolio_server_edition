@@ -33,8 +33,8 @@ $(document).ready(function() {
     "Box Playground",
     "Play around with CSS properties, and have a great time doing it too!",
     ["HTML5", "CSS", "javascript"],
-    "https://getHashSet.com",
-    "../images/Title"
+    "https://gethashset.github.io/Box-Playground/",
+    "../images/computer.jpg"
   );
   // add to project_array
   project_array.push(project_1);
@@ -44,10 +44,10 @@ $(document).ready(function() {
   ////////////
   let project_2 = new Project (
     "README.md Builder",
-    "Building README's is a lot of work. But this handy app makes starting your documentation easier.",
+    "Building README's is a lot of work. But this handy app makes starting your documentation easier. While you're there feel free to check out the rest of the site too.",
     ["HTML", "SCSS", "javascript", "API", "Markup"],
     "https://getHashSet.com",
-    "../images/Title"
+    "../images/code.jpg"
   );
   // add to project_array
   project_array.push(project_2);
@@ -56,11 +56,11 @@ $(document).ready(function() {
   // project 3
   ////////////
   let project_3 = new Project (
-    "Better Business Cards",
-    "Business Cards are coming back. And this is the place to build your next one",
-    ["Node.js", "SQL", "QR API"],
+    "Servers",
+    "Setting up a mySQL or noSQL database can be hard; Let me help. I have experience setting up small servers and local host enviornments.",
+    ["Node.js", "SQL", "noSQL", "XAMPP"],
     "https://getHashSet.com",
-    "../images/Title"
+    "../images/server.jpg"
   );
   // add to project_array
   project_array.push(project_3);
@@ -71,9 +71,9 @@ $(document).ready(function() {
   let project_4 = new Project (
     "Banner Ads",
     "Google Ads made to order",
-    ["HTML", "SCSS", "QR API"],
-    "https://getHashSet.com",
-    "../images/Title"
+    ["HTML", "SCSS", "QR API", "GSAP"],
+    "https://github.com/getHashSet",
+    "../images/ads.jpg"
   );
   // add to project_array
   project_array.push(project_4);
@@ -82,11 +82,11 @@ $(document).ready(function() {
   // project 5
   ////////////
   let project_5 = new Project (
-    "Wedding Website",
-    "Get ready for your big day.",
-    ["Node.js", "SQL", "API", "HTML"],
-    "https://getHashSet.com",
-    "../images/Title"
+    "Virtual Reality",
+    "Have an engineering Maya object you want to see before you 3D print it? Maybe create a training sim that places your employees in the enviornment? Look no further.",
+    ["C#", "noSQL", "Unity", "HTC VIVE"],
+    "https://github.com/getHashSet",
+    "../images/vr.jpg"
   );
   // add to project_array
   project_array.push(project_5);
@@ -96,10 +96,10 @@ $(document).ready(function() {
   ////////////
   let project_6 = new Project (
     "Comming Soon",
-    "Business webpage.",
-    ["Node.js", "no SQL", "API", "Handlebars"],
+    "Tom's website is getting a facelift. Check in this January to see what comes next.",
+    ["Node.js", "no SQL", "API", "React.js"],
     "https://getHashSet.com",
-    "../images/Title"
+    "../images/tomssite.jpg"
   );
   // add to project_array
   project_array.push(project_6);

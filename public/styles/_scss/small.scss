@@ -8,18 +8,51 @@
 // chapters
 //////////////////////////////////////////////////
 
+#hero {
+    div {
+        h1 { 
+            line-height: .7em;
+            display: inline-block;
+            margin: .3em 0;
+            span {
+
+                font-size: .8em;
+            }
+
+            #name_space {
+                display: block;
+            }
+        }
+    }
+}
+
 #c4 {
 
     .github {
 
         .git_input_field {
-            width: 100%;
+            width: 85%;
             margin: 2em .5em;
-            font-size: 1em;
+            font-size: .85em;
         }
 
         .git_pinned_items {
             overflow: scroll;
         }
+    }
+}
+
+#c5 {
+    height: 100vh;
+    h2 {
+        font-size: 2em;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+#c7 {
+    .business_card {
+        display: none;
     }
 }

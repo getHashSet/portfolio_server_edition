@@ -2,8 +2,33 @@
 
 $( document ).ready(function() {
 
-    const greenSock = {
+    let theH1Tag = $("h1");
+    let myName = "Matthew Carpenter";
+    let myNameArr = [];
+    
+    // wrap each letter of my name in a span.
+    // add id of the name_letter_number so that we can put it in an object.
+    // use that object to animate.
+    for (i = 0; i < myName.length; i++) {
+       
+        if ( i === 7){
+            theH1Tag.append(`<span id='name_space' class='letters'>${myName[i]}</span>`);
+        } else {
+            theH1Tag.append(`<span id='name_${myName[i]}${i}' class='letters'>${myName[i]}</span>`);
+        };
+        let thisletter = `name_${myName[i]}${i}`;
+        //myNameObj[`letter${i}`] = $(`#${thisletter}`);
+        myNameArr.push(`${thisletter}`);
+    };
 
+    var t3 = new TimelineMax();
+    myNameArr.forEach(letterId => {
+        t3.from(
+            $(`#${letterId}`), .1, { ease: "bounce.in", y: -100, opacity: 0 }
+        )
+    });
+
+    const greenSock = {
         project_1: $("#projects"),
         card1: $("#card_1"),
         card2: $("#card_2"),
@@ -33,7 +58,7 @@ $( document ).ready(function() {
     
     function updatePercentage() {
         tl.progress();
-        console.log(tl.progress())
+        //console.log(tl.progress())
     }
 
 
@@ -69,34 +94,20 @@ $( document ).ready(function() {
 
     $(window).on('resize scroll', function() {
 
-        if ($('.deck').isInViewport()) {
-            //console.log("true");
+        if ($('.deck').isInViewport() && rollProjects == false) {
+            //console.log("roll projects")
 
-            if (rollProjects == false) {
-                
-                console.log("roll projects")
+                t2.from( [greenSock.card1], 1, {y: 300, opacity: 1}, .2);
+                t2.from( [greenSock.card4], 1, {y: 300, opacity: 0}, 1);
+                t2.from( [greenSock.card2], 1, {y: 300, opacity: 0}, .5);
+                t2.from( [greenSock.card5], 1, {y: 300, opacity: 0}, 1.5);
+                t2.from( [greenSock.card3], 1, {y: 300, opacity: 0}, 1);
+                t2.from( [greenSock.card6], 1, {y: 300, opacity: 0}, 1.2);
 
-                rollProjects = true; 
-
-                t2.from(
-                    [greenSock.card1, greenSock.card4], 1, {y: 300, opacity: 0}, .3);
-                t2.from(
-                    [greenSock.card2, greenSock.card5], 1, {y: 300, opacity: 0}, .7);
-                t2.from(
-                    [greenSock.card3, greenSock.card6], 1, {y: 300, opacity: 0}, 1.3);
-
-            } else {
-
-            //console.log("false");
-            rollProjects = true;
-
-            };
-
-        } else {
-
+            rollProjects = true; 
+        } else if (!$('.deck').isInViewport() && rollProjects == true) {
             // rollProjects = false;
-            console.log("false");
-
+            //console.log("false");
         }
     });
 
