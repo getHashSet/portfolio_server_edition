@@ -741,6 +741,8 @@ section {
       bottom: 30%; }
 
 #c7 {
+  color: #fff;
+  text-shadow: 1px 1px 3px #2d3436;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -751,16 +753,21 @@ section {
   justify-content: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
-  align-items: center; }
+  align-items: center;
+  text-align: center;
+  background-image: url(../../images/pixels.png); }
   #c7 h2 {
     font-size: 3em;
     font-weight: 700;
-    width: 100%; }
+    width: 100%;
+    padding: .5em 0; }
   #c7 h3 {
-    font-size: 2em;
+    font-size: 1em;
     font-weight: 200;
     width: 100%; }
   #c7 .business_card {
+    margin: 2em;
+    padding: 1em;
     width: 350px;
     height: 150px;
     background-color: #fff;
@@ -779,10 +786,67 @@ section {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center; }
-    #c7 .contact_input input {
-      width: 50%; }
-    #c7 .contact_input .span {
-      display: block; }
+    #c7 .contact_input .contact_wrap {
+      max-width: 800px;
+      padding: 1em;
+      margin: .5em;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center; }
+      #c7 .contact_input .contact_wrap input {
+        width: 100%;
+        background-color: rgba(45, 52, 54, 0.5);
+        border: none;
+        margin: 4px 0;
+        border: 1px solid #95a5a6;
+        line-height: 1.2em;
+        font-size: 1.2em;
+        font-family: "Livvic", sans-serif;
+        padding: .5em 1em;
+        color: #fff; }
+  #c7 .locked_section {
+    width: 100%;
+    padding: 1em;
+    margin-top: 1em;
+    background-color: rgba(45, 52, 54, 0.7);
+    border-top: 2px solid #2d3436; }
+    #c7 .locked_section span {
+      display: block;
+      font-size: 5em; }
+    #c7 .locked_section input {
+      min-width: 200px;
+      padding: .5em 1em; }
+    #c7 .locked_section div:last-child {
+      width: 100%;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center; }
+      #c7 .locked_section div:last-child div {
+        width: 100px; }
+  #c7 .input_button {
+    background-color: rgba(45, 52, 54, 0);
+    border: 2px solid #ecf0f1;
+    padding: 1em;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin-top: 1em; }
+  #c7 .input_button:active {
+    -webkit-transform: translateY(4px);
+    -ms-transform: translateY(4px);
+    transform: translateY(4px); }
 
 #user-activity-overview {
   display: none; }

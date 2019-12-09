@@ -788,24 +788,31 @@ section {
 }
 
 #c7 {
+	color: #fff;
+	text-shadow: 1px 1px 3px $dark;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
 	align-items: center;
+	text-align: center;
+	background-image: url(../../images/pixels.png);
 
 	h2 {
 		font-size: 3em;
 		font-weight: 700;
-		width: 100%
+		width: 100%;
+		padding: .5em 0;
 	}
 
 	h3 {
-		font-size: 2em;
+		font-size: 1em;
 		font-weight: 200;
 		width: 100%;
 	}
 
 	.business_card {
+		margin: 2em;
+		padding: 1em;
 		width: 350px;
 		height: 150px;
 		background-color: #fff;
@@ -835,13 +842,69 @@ section {
 		justify-content: center;
 		align-items: center;
 
-		input {
-			width: 50%;
+		.contact_wrap {
+			max-width: 800px;
+			padding: 1em;
+			margin: .5em;
+			display: flex;
+			justify-content: center;
+			flex-wrap: wrap;
+			align-items: center;
+
+			input { 
+				width: 100%;
+				background-color: rgba($dark, .5);
+				border: none;
+				margin: 4px 0;
+				border: 1px solid $light_highlight;
+				line-height: 1.2em;
+				font-size: 1.2em;
+				font-family: $font;
+				padding: .5em 1em;
+				color: #fff;
+			}
+		}
+	}
+
+	.locked_section {
+		width: 100%;
+		padding: 1em;
+		margin-top: 1em;
+		background-color: rgba($dark, .7);
+		border-top: 2px solid $dark;
+
+		span {
+			display: block;
+			font-size: 5em;
 		}
 
-		.span {
-			display: block;
+		input {
+			min-width: 200px;
+			padding: .5em 1em;
 		}
+
+		div:last-child {
+			width: 100%;
+			display: flex;
+			justify-content: center;
+
+			div {
+				width: 100px;
+			}
+		}
+
+	}
+
+	.input_button {
+		background-color: rgba($dark, 0);
+		border: 2px solid $light;
+		padding: 1em;
+		user-select: none;
+		margin-top: 1em;
+	}
+
+	.input_button:active {
+		transform: translateY(4px);
 	}
 }
 

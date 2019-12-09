@@ -268,26 +268,44 @@
         </h3>
 
         <div class="business_card">
-            <div class="qr_code"></div>
+            <div class="qr_code">
+                <img id="qr_code" src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://linkedin.com/in/matthewcarpenter22" alt="qr-data">
+            </div>
             <div class="bc_name"></div>
             <div class="bc_linkedin"></div>
             <div class="bc_email"></div>
         </div>
 
         <div class="contact_input">
+            <div class="contact_wrap">
+
             <input type="text" placeholder="Name" />
             <input type="text" placeholder="Email address" />
             <input type="text" placeholder="Subject" />
             <input type="text" placeholder="Your message" />
+
             <span>
                 <div class="input_button">Send Message</div>
             </span>
+
+            </div>
         </div>
 
         <p>
             To view the printable version of my resume just enter your information above.
             And that will unlock the next section.
         </p>
+
+        <div class="locked_section">
+            <span>
+                <ion-icon name="ios-lock"></ion-icon>
+            </span>
+            <input type="email" placeholder="Email address" />
+            <input type="text" placeholder="Your name" />
+            <div>
+                <div class="input_button"> Unlock </div>
+            </div>
+        </div>
 
     </section>
 
