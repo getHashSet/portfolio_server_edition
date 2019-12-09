@@ -29,6 +29,7 @@ mongodb.MongoClient.connect(process.env.MONGODB_URI || 'mongodb://localhost/unit
     console.log(err);
     process.exit(1);
   }
+}
 
 // Handlebars
 app.engine(
