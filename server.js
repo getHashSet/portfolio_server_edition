@@ -45,14 +45,14 @@ require("./routes/apiRoutes")(app);
 require("./routes/htmlRoutes")(app);
 
 // Load index page
-app.get("/", function(req, res) {
-  db.Example.findAll({}).then(function(portfolio_db) {
-    res.render("index", {
-      msg: "Welcome!",
-      examples: portfolio_db
-    });
-  });
-});
+// app.get("/", function(req, res) {
+//   db.Example.findAll({}).then(function(portfolio_db) {
+//     res.render("index", {
+//       msg: "Welcome!",
+//       examples: portfolio_db
+//     });
+//   });
+// });
 
 var syncOptions = { force: false };
 
