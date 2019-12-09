@@ -1,15 +1,37 @@
+// {
+//   "development": {
+//     "username": "root",
+//     "password": "password",
+//     "database": "portfolio_db",
+//     "host": "localhost",
+//     "dialect": "mysql"
+//   },
+//   "test": {
+//     "username": "root",
+//     "password": "password",
+//     "database": "portfolio_db",
+//     "host": "localhost",
+//     "dialect": "mysql",
+//     "logging": false
+//   },
+//   "production": {
+//     "use_env_variable": "JAWSDB_URL",
+//     "dialect": "mysql"
+//   }
+// }
+
 {
   "development": {
     "username": "root",
-    "password": "password",
-    "database": "portfolio_db",
+    "password": null,
+    "database": "exampledb",
     "host": "localhost",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": "password",
-    "database": "portfolio_db",
+    "password": null,
+    "database": "testdb",
     "host": "localhost",
     "dialect": "mysql",
     "logging": false
@@ -19,3 +41,4 @@
     "dialect": "mysql"
   }
 }
+
