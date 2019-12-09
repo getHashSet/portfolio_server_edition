@@ -2,7 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const exphbs = require("express-handlebars");
 const logger = require("morgan");
-//const mongoose = require("mongoose");
+const mongoose = require("mongoose");
 const axios = require("axios");
 const cheerio = require("cheerio");
 const hash = require("hash.js");
@@ -20,8 +20,15 @@ app.use(express.json());
 app.use(express.static("public"));
 app.use(logger("dev"));
 
-// Connect to local Mongo DB
-//mongoose.connect("mongodb://localhost/unit18Populater", { useNewUrlParser: true });
+// // Connect to local Mongo DB
+// mongoose.connect("mongodb://localhost/unit18Populater", { useNewUrlParser: true });
+
+// Connect to the database before starting the application server. 
+mongodb.MongoClient.connect(process.env.MONGODB_URI || 'mongodb://localhost/unit18Populater', function (err, database) {
+  if (err) {
+    console.log(err);
+    process.exit(1);
+  }
 
 // Handlebars
 app.engine(
