@@ -24,12 +24,12 @@ app.use(logger("dev"));
 // mongoose.connect("mongodb://localhost/unit18Populater", { useNewUrlParser: true });
 
 // Connect to the database before starting the application server. 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/unit18Populater', function (err, database) {
-  if (err) {
-    console.log(err);
-    process.exit(1);
-  }
-});
+// mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/unit18Populater', function (err, database) {
+//   if (err) {
+//     console.log(err);
+//     process.exit(1);
+//   }
+// });
 
 // Handlebars
 app.engine(
