@@ -17,7 +17,7 @@ console.log(process.env[config.use_env_variable]);
 console.log("------------------------------------");
 
 if (config.use_env_variable) {
-  var sequelize = new Sequelize(config);
+  var sequelize = new Sequelize(process.env[config.use_env_variable]);
 } else {
   var sequelize = new Sequelize(
     config.database,
@@ -26,7 +26,6 @@ if (config.use_env_variable) {
     config
   );
 }
-
 
 fs.readdirSync(__dirname)
   .filter(function(file) {
