@@ -24,9 +24,4 @@ module.exports = function(app) {
   app.get("*", function(req, res) {
     res.render("404");
   });
-
-  // favicon for title bar
-  app.get("/favicon.ico", function() {
-    res.sendfile("/images/hash_demo.png");
-  });
 };
