@@ -36,6 +36,16 @@ app.set("view engine", "handlebars");
 require("./routes/apiRoutes")(app);
 require("./routes/htmlRoutes")(app);
 
+// Load index page
+app.get("/", function(req, res) {
+  db.Example.findAll({}).then(function(dbExamples) {
+    res.render("index", {
+      msg: "Welcome!",
+      examples: dbExamples
+    });
+  });
+});
+
 var syncOptions = { force: false };
 
 // If running a test, set syncOptions.force to true
