@@ -1,15 +1,15 @@
 {
   "development": {
     "username": "root",
-    "password": null,
-    "database": "exampledb",
+    "password": "password",
+    "database": "portfolio_db",
     "host": "localhost",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": null,
-    "database": "testdb",
+    "password": "password",
+    "database": "portfolio_db",
     "host": "localhost",
     "dialect": "mysql",
     "logging": false
@@ -20,6 +20,6 @@
     "Dialect": "mysql",
     "username": "root",
     "password": null,
-    "database": "database_production",
+    "database": "database_production"
   }
 }
