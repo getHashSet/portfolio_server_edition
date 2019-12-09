@@ -21,6 +21,14 @@ if (config.use_env_variable) {
   );
 }
 
+// let sequelize = new Sequelize({
+//   "username": "root",
+//   "password": null,
+//   "database": "database_production",
+//   "host": "127.0.0.1",
+//   "dialect": "mysql"
+// })
+
 fs.readdirSync(__dirname)
   .filter(function(file) {
     return (
