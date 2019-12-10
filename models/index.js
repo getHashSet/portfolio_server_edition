@@ -8,17 +8,8 @@ var env = process.env.NODE_ENV || "development";
 var config = require(__dirname + "/../config/config.json")[env];
 var db = {};
 
-console.log("------------------------------------");
-console.log(env);
-console.log("------------------------------------");
-console.log(config);
-console.log(config.use_env_variable);
-console.log("------------------------------------");
-console.log(process.env[config["use_env_variable"]]);
-console.log("------------------------------------");
-
 if (config.use_env_variable) {
-  var sequelize = new Sequelize(process.env[config["use_env_variable"]], {"dialect": config.dialect});
+  var sequelize = new Sequelize(process.env[config.use_env_variable], {"dialect": config.dialect, "use_env_variable": config.use_env_variable});
 } else {
   var sequelize = new Sequelize(
     config.database,
