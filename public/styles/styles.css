@@ -918,15 +918,14 @@ section {
     transform: translateY(0); } }
 
 .spinning_slow {
-  -webkit-animation-name: spin;
-  animation-name: spin;
+  -webkit-animation-name: spin_right;
+  animation-name: spin_right;
   -webkit-animation-timing-function: ease;
   animation-timing-function: ease;
   -webkit-animation: bounce_small 2s;
   animation: bounce_small 2s;
   -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
-  animation-name: spin;
   -webkit-animation-duration: 5000ms;
   animation-duration: 5000ms;
   animation-iteration-count: infinite;
@@ -943,7 +942,6 @@ section {
   animation: bounce_small .5s;
   -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
-  animation-name: spin;
   -webkit-animation-duration: 5000ms;
   animation-duration: 5000ms;
   animation-iteration-count: infinite;
@@ -960,7 +958,6 @@ section {
   animation: bounce_small 5s;
   -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
-  animation-name: spin;
   -webkit-animation-duration: 5000ms;
   animation-duration: 5000ms;
   animation-iteration-count: infinite;
@@ -983,3 +980,19 @@ section {
   to {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg); } }
+
+@-webkit-keyframes spin_right {
+  from {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg); }
+  to {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); } }
+
+@keyframes spin_right {
+  from {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg); }
+  to {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); } }

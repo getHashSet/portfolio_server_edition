@@ -965,11 +965,10 @@ section {
 }
 
 .spinning_slow {
-	animation-name: spin;
+	animation-name: spin_right;
 	animation-timing-function: ease;
 	animation: bounce_small 2s;
 	animation-iteration-count: infinite;  
-	animation-name: spin;
 	animation-duration: 5000ms;
 	animation-iteration-count: infinite;
 	animation-timing-function: linear; 
@@ -981,7 +980,6 @@ section {
 	animation-timing-function: ease;
 	animation: bounce_small .5s;
 	animation-iteration-count: infinite;  
-	animation-name: spin;
 	animation-duration: 5000ms;
 	animation-iteration-count: infinite;
 	animation-timing-function: linear; 
@@ -993,7 +991,6 @@ section {
 	animation-timing-function: ease;
 	animation: bounce_small 5s;
 	animation-iteration-count: infinite;  
-	animation-name: spin;
 	animation-duration: 5000ms;
 	animation-iteration-count: infinite;
 	animation-timing-function: linear; 
@@ -1006,5 +1003,14 @@ section {
     }
     to {
         transform:rotate(360deg);
+    }
+}
+
+@keyframes spin_right {
+    from {
+        transform:rotate(360deg);
+    }
+    to {
+        transform:rotate(0deg);
     }
 }
