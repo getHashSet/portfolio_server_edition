@@ -9,7 +9,15 @@ var config = require(__dirname + "/../config/config.json")[env];
 var db = {};
 
 if (config.use_env_variable) {
-  var sequelize = new Sequelize(process.env[config.use_env_variable], {"dialect": config.dialect, "use_env_variable": config.use_env_variable});
+  var sequelize = new Sequelize(process.env[config.use_env_variable], 
+    {
+    "dialect": config.dialect, 
+    "use_env_variable": config.use_env_variable,
+    "username": config.username,
+    "password": config.password,
+    "database": config.database,
+    "host": config.host
+  });
 } else {
   var sequelize = new Sequelize(
     config.database,
