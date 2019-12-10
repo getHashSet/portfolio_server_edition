@@ -1,21 +1,25 @@
 {
   "development": {
-    "username": "root",
-    "password": "password",
-    "database": "portfolio_db",
-    "host": "localhost",
+    "username": "sjgjdhgfu3905bzh",
+    "password": "g7je6plaf6wy6mat",
+    "database": "sylp6sdztri6unq5",
+    "host": "kf3k4aywsrp0d2is.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "dialect": "mysql"
   },
   "test": {
-    "username": "root",
-    "password": "root",
-    "database": "testdb",
-    "host": "localhost",
+    "username": "sjgjdhgfu3905bzh",
+    "password": "g7je6plaf6wy6mat",
+    "database": "sylp6sdztri6unq5",
+    "host": "kf3k4aywsrp0d2is.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "dialect": "mysql",
     "logging": false
   },
   "production": {
     "use_env_variable": "JAWSDB_URL",
-    "dialect": "mysql"
+    "dialect": "mysql",    
+    "username": "sjgjdhgfu3905bzh",
+    "password": "g7je6plaf6wy6mat",
+    "database": "sylp6sdztri6unq5",
+    "host": "kf3k4aywsrp0d2is.cbetxkdyhwsb.us-east-1.rds.amazonaws.com"
   }
 }
