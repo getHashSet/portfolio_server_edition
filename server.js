@@ -62,9 +62,8 @@ if (process.env.NODE_ENV === "test") {
 app.post("/scrape/git", function (req, res) {
   // view object returned on the server. //
   // console.log(req.body.git);
- console.log("-----------------------------------------------------------")
-  console.log(req.body.git);
-  axios.get(`${req.body.git}`)
+  let urlForScrape = req.body.git;
+  axios.get(urlForScrape)
     .then(function (responseFromGit) {
       //console.log(responseFromGit.data);
       let $ = cheerio.load(responseFromGit.data);
