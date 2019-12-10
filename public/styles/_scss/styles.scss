@@ -965,10 +965,11 @@ section {
 }
 
 .spinning_slow {
-	animation-name: spin_right;
+	animation-name: spin;
 	animation-timing-function: ease;
 	animation: bounce_small 2s;
 	animation-iteration-count: infinite;  
+	animation-name: spin;
 	animation-duration: 5000ms;
 	animation-iteration-count: infinite;
 	animation-timing-function: linear; 
@@ -980,9 +981,36 @@ section {
 	animation-timing-function: ease;
 	animation: bounce_small .5s;
 	animation-iteration-count: infinite;  
+	animation-name: spin;
 	animation-duration: 5000ms;
 	animation-iteration-count: infinite;
-	animation-timing-function: linear; 
+	animation-timing-function: cubic-bezier(0.6, -0.28, 0.735, 0.045);
+	display: block;
+}
+
+
+.spinning_odd_1 {
+	animation-name: spin;
+	animation-timing-function: ease;
+	animation: bounce_small .5s;
+	animation-iteration-count: infinite;  
+	animation-name: spin;
+	animation-duration: 5000ms;
+	animation-iteration-count: infinite;
+	animation-timing-function: cubic-bezier(0.6, -0.28, 0.735, 0.045);
+	display: block;
+}
+
+
+.spinning_odd_2 {
+	animation-name: spin;
+	animation-timing-function: ease;
+	animation: bounce_small .5s;
+	animation-iteration-count: infinite;  
+	animation-name: spin;
+	animation-duration: 5000ms;
+	animation-iteration-count: infinite;
+	animation-timing-function: cubic-bezier(0.95, 0.05, 0.795, 0.035);
 	display: block;
 }
 
@@ -991,9 +1019,22 @@ section {
 	animation-timing-function: ease;
 	animation: bounce_small 5s;
 	animation-iteration-count: infinite;  
+	animation-name: spin;
 	animation-duration: 5000ms;
 	animation-iteration-count: infinite;
 	animation-timing-function: linear; 
+	display: block;
+}
+
+.spinning_super_odd_3 {
+	animation-name: spin;
+	animation-timing-function: ease;
+	animation: bounce_small 5s;
+	animation-iteration-count: infinite;  
+	animation-name: spin;
+	animation-duration: 5000ms;
+	animation-iteration-count: infinite;
+	animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275); 
 	display: block;
 }
 
@@ -1003,14 +1044,5 @@ section {
     }
     to {
         transform:rotate(360deg);
-    }
-}
-
-@keyframes spin_right {
-    from {
-        transform:rotate(360deg);
-    }
-    to {
-        transform:rotate(0deg);
     }
 }

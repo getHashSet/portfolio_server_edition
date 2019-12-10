@@ -918,14 +918,15 @@ section {
     transform: translateY(0); } }
 
 .spinning_slow {
-  -webkit-animation-name: spin_right;
-  animation-name: spin_right;
+  -webkit-animation-name: spin;
+  animation-name: spin;
   -webkit-animation-timing-function: ease;
   animation-timing-function: ease;
   -webkit-animation: bounce_small 2s;
   animation: bounce_small 2s;
   -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
+  animation-name: spin;
   -webkit-animation-duration: 5000ms;
   animation-duration: 5000ms;
   animation-iteration-count: infinite;
@@ -942,11 +943,46 @@ section {
   animation: bounce_small .5s;
   -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
+  animation-name: spin;
   -webkit-animation-duration: 5000ms;
   animation-duration: 5000ms;
   animation-iteration-count: infinite;
-  -webkit-animation-timing-function: linear;
-  animation-timing-function: linear;
+  -webkit-animation-timing-function: cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  animation-timing-function: cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  display: block; }
+
+.spinning_odd_1 {
+  -webkit-animation-name: spin;
+  animation-name: spin;
+  -webkit-animation-timing-function: ease;
+  animation-timing-function: ease;
+  -webkit-animation: bounce_small .5s;
+  animation: bounce_small .5s;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  animation-name: spin;
+  -webkit-animation-duration: 5000ms;
+  animation-duration: 5000ms;
+  animation-iteration-count: infinite;
+  -webkit-animation-timing-function: cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  animation-timing-function: cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  display: block; }
+
+.spinning_odd_2 {
+  -webkit-animation-name: spin;
+  animation-name: spin;
+  -webkit-animation-timing-function: ease;
+  animation-timing-function: ease;
+  -webkit-animation: bounce_small .5s;
+  animation: bounce_small .5s;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  animation-name: spin;
+  -webkit-animation-duration: 5000ms;
+  animation-duration: 5000ms;
+  animation-iteration-count: infinite;
+  -webkit-animation-timing-function: cubic-bezier(0.95, 0.05, 0.795, 0.035);
+  animation-timing-function: cubic-bezier(0.95, 0.05, 0.795, 0.035);
   display: block; }
 
 .spinning_super_slow {
@@ -958,11 +994,29 @@ section {
   animation: bounce_small 5s;
   -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
+  animation-name: spin;
   -webkit-animation-duration: 5000ms;
   animation-duration: 5000ms;
   animation-iteration-count: infinite;
   -webkit-animation-timing-function: linear;
   animation-timing-function: linear;
+  display: block; }
+
+.spinning_super_odd_3 {
+  -webkit-animation-name: spin;
+  animation-name: spin;
+  -webkit-animation-timing-function: ease;
+  animation-timing-function: ease;
+  -webkit-animation: bounce_small 5s;
+  animation: bounce_small 5s;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  animation-name: spin;
+  -webkit-animation-duration: 5000ms;
+  animation-duration: 5000ms;
+  animation-iteration-count: infinite;
+  -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
   display: block; }
 
 @-webkit-keyframes spin {
@@ -980,19 +1034,3 @@ section {
   to {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg); } }
-
-@-webkit-keyframes spin_right {
-  from {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg); }
-  to {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg); } }
-
-@keyframes spin_right {
-  from {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg); }
-  to {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg); } }
