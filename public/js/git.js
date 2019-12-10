@@ -54,7 +54,7 @@ $(document).ready(function() {
             data.name ? gitObj.name = data.name : gitObj.name = data.login;
 
             // summary?
-            data.bio.length >= 8 ? gitObj.bio = data.bio : gitObj.bio = "Learn more by visiting my github.";
+            data.bio != null ? gitObj.bio = data.bio : gitObj.bio = "Learn more by visiting my github.";
 
             // link to personal url
             data.blog ? gitObj.website = data.blog : gitObj.website = data.html_url;
