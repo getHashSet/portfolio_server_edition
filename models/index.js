@@ -12,14 +12,13 @@ console.log("------------------------------------");
 console.log(env);
 console.log("------------------------------------");
 console.log(config);
-console.log(config.env);
 console.log(config.use_env_variable);
 console.log("------------------------------------");
-console.log(process.env[config[use_env_variable]]);
+console.log(process.env[config["use_env_variable"]]);
 console.log("------------------------------------");
 
 if (config.use_env_variable) {
-  var sequelize = new Sequelize(process.env[config[use_env_variable]], {"dialect": config.dialect});
+  var sequelize = new Sequelize(process.env[config["use_env_variable"]], {"dialect": config.dialect});
 } else {
   var sequelize = new Sequelize(
     config.database,
