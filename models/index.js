@@ -15,7 +15,7 @@ console.log(config);
 console.log(config.env);
 console.log(config.use_env_variable);
 console.log("------------------------------------");
-console.log(process.env[configuse_env_variable]);
+console.log(process.env[config[use_env_variable]]);
 console.log("------------------------------------");
 
 if (config.use_env_variable) {
