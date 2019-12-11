@@ -34,7 +34,7 @@ $(document).ready(function() {
     "Play around with CSS properties, and have a great time doing it too!",
     ["HTML5", "CSS", "javascript"],
     "https://gethashset.github.io/Box-Playground/",
-    "../images/computer.jpg"
+    "../images/code.jpg"
   );
   // add to project_array
   project_array.push(project_1);
@@ -43,11 +43,11 @@ $(document).ready(function() {
   // project 2
   ////////////
   let project_2 = new Project (
-    "README.md Builder",
-    "Building README's is a lot of work. But this handy app makes starting your documentation easier. While you're there feel free to check out the rest of the site too.",
-    ["HTML", "SCSS", "javascript", "API", "Markup"],
+    "Servers",
+    "Setting up a mySQL or noSQL database can be hard; Let me help. I have experience setting up small servers and local host enviornments.",
+    ["Node.js", "SQL", "noSQL", "XAMPP"],
     "https://getHashSet.com",
-    "../images/code.jpg"
+    "../images/server.jpg"
   );
   // add to project_array
   project_array.push(project_2);
@@ -56,11 +56,11 @@ $(document).ready(function() {
   // project 3
   ////////////
   let project_3 = new Project (
-    "Servers",
-    "Setting up a mySQL or noSQL database can be hard; Let me help. I have experience setting up small servers and local host enviornments.",
-    ["Node.js", "SQL", "noSQL", "XAMPP"],
+    "README.md Builder",
+    "This handy app makes starting your documentation easier. While you're there feel free to check out the rest of the site too.",
+    ["SCSS", "ES6", "Markup"],
     "https://getHashSet.com",
-    "../images/server.jpg"
+    "../images/computer.jpg"
   );
   // add to project_array
   project_array.push(project_3);
@@ -83,8 +83,8 @@ $(document).ready(function() {
   ////////////
   let project_5 = new Project (
     "Virtual Reality",
-    "Have an engineering Maya object you want to see before you 3D print it? Maybe create a training sim that places your employees in the enviornment? Look no further.",
-    ["C#", "noSQL", "Unity", "HTC VIVE"],
+    "Create a training sim that places your employees in the enviornment? Look no further.",
+    ["C#", "noSQL", "Unity"],
     "https://github.com/getHashSet",
     "../images/vr.jpg"
   );

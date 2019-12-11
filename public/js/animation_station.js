@@ -24,7 +24,7 @@ $( document ).ready(function() {
     var t3 = new TimelineMax();
     myNameArr.forEach(letterId => {
         t3.from(
-            $(`#${letterId}`), .1, { ease: "bounce.in", y: -100, opacity: 0 }
+            $(`#${letterId}`), .1, { ease: "bounce.in", y: -100, opacity: 0 },
         )
     });
 
@@ -90,24 +90,44 @@ $( document ).ready(function() {
     //  on scroll
     ////////////
     
+    const rollUp = () => {
+
+        t2.to( [greenSock.card1], 1, {y: 0, opacity: 1}, .2);
+        t2.to( [greenSock.card4], 1, {y: 0, opacity: 1}, 1);
+        t2.to( [greenSock.card2], 1, {y: 0, opacity: 1}, .5);
+        t2.to( [greenSock.card5], 1, {y: 0, opacity: 1}, 1.5);
+        t2.to( [greenSock.card3], 1, {y: 0, opacity: 1}, 1);
+        t2.to( [greenSock.card6], 1, {y: 0, opacity: 1}, 1.2);
+
+    };
+
+    const rollDown = () => {
+            
+        t3.to( [greenSock.card1], .1, {y: 300, opacity: 0});
+        t3.to( [greenSock.card4], .1, {y: 300, opacity: 0});
+        t3.to( [greenSock.card2], .1, {y: 300, opacity: 0});
+        t3.to( [greenSock.card5], .1, {y: 300, opacity: 0});
+        t3.to( [greenSock.card3], .1, {y: 300, opacity: 0});
+        t3.to( [greenSock.card6], .1, {y: 300, opacity: 0});
+       
+    }
+
+
     let rollProjects = false;
 
     $(window).on('resize scroll', function() {
 
         if ($('.deck').isInViewport() && rollProjects == false) {
-            //console.log("roll projects")
-
-                t2.from( [greenSock.card1], 1, {y: 300, opacity: 1}, .2);
-                t2.from( [greenSock.card4], 1, {y: 300, opacity: 0}, 1);
-                t2.from( [greenSock.card2], 1, {y: 300, opacity: 0}, .5);
-                t2.from( [greenSock.card5], 1, {y: 300, opacity: 0}, 1.5);
-                t2.from( [greenSock.card3], 1, {y: 300, opacity: 0}, 1);
-                t2.from( [greenSock.card6], 1, {y: 300, opacity: 0}, 1.2);
+            console.log("roll projects")
 
             rollProjects = true; 
+            rollUp();
+
         } else if (!$('.deck').isInViewport() && rollProjects == true) {
-            // rollProjects = false;
-            //console.log("false");
+
+            rollProjects = false;
+            //rollDown();
+
         }
     });
 

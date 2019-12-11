@@ -1,9 +1,13 @@
+#hero {
+  background-attachment: inherit; }
+
 #hero div h1 {
   line-height: .7em;
   display: inline-block;
   margin: .3em 0; }
   #hero div h1 span {
-    font-size: .8em; }
+    line-height: .3em;
+    font-size: .5em; }
   #hero div h1 #name_space {
     display: block; }
 

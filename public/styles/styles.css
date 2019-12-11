@@ -178,6 +178,13 @@ section {
   -ms-flex-pack: center;
   justify-content: center; }
 
+#c1,
+#c2,
+#c3,
+#c4,
+#c5 {
+  overflow: hidden; }
+
 #c1 {
   background-color: #f1f1f1;
   min-height: 500px; }
@@ -226,7 +233,12 @@ section {
         margin: 1%;
         z-index: 3;
         -webkit-box-shadow: 1px 2px 4px;
-        box-shadow: 1px 2px 4px; }
+        box-shadow: 1px 2px 4px;
+        overflow: hidden;
+        opacity: 0;
+        -webkit-transform: translateY(300px);
+        -ms-transform: translateY(300px);
+        transform: translateY(300px); }
         #c1 #projects .deck .card .card_art {
           position: absolute;
           left: 0;
@@ -289,11 +301,14 @@ section {
           transition: opacity .3s;
           opacity: 0; }
           #c1 #projects .deck .card .hover_info p {
+            font-size: .9em;
+            position: absolute;
+            top: 0;
+            left: 0;
             -webkit-user-select: none;
             -moz-user-select: none;
             -ms-user-select: none;
             user-select: none;
-            top: 25%;
             padding: 1em;
             color: #fff;
             text-shadow: 1px 2px #2d3436; }
@@ -511,7 +526,10 @@ section {
         overflow: hidden; }
         #c4 .github .git_pinned_items .git_card .git_pinned_img {
           width: 100%;
-          margin: 8px; }
+          height: 100%;
+          margin: 8px;
+          min-width: 100px;
+          min-height: 100px; }
         #c4 .github .git_pinned_items .git_card h3 {
           font-size: 1em;
           font-weight: 700;
@@ -1034,3 +1052,9 @@ section {
   to {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg); } }
+
+.col-2,
+.col-4,
+.col-6,
+.col-12 {
+  display: none; }

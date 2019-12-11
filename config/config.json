@@ -1,9 +1,9 @@
 {
   "development": {
-    "username": "sjgjdhgfu3905bzh",
-    "password": "g7je6plaf6wy6mat",
-    "database": "sylp6sdztri6unq5",
-    "host": "kf3k4aywsrp0d2is.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+    "username": "root",
+    "password": "password",
+    "database": "portfolio_db",
+    "host": "localhost",
     "dialect": "mysql"
   },
   "test": {

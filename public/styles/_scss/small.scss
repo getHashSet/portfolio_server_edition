@@ -5,6 +5,14 @@
 @import "__vars";
 
 //////////////////////////////////////////////////
+// index
+//////////////////////////////////////////////////
+
+#hero {
+    background-attachment: inherit;
+}
+
+//////////////////////////////////////////////////
 // chapters
 //////////////////////////////////////////////////
 
@@ -15,8 +23,8 @@
             display: inline-block;
             margin: .3em 0;
             span {
-
-                font-size: .8em;
+                line-height: .3em;
+                font-size: .5em;
             }
 
             #name_space {
