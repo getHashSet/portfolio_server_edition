@@ -16,7 +16,6 @@ $(document).ready(function() {
 
     };
 
-
     ////////////////////////////////////
     // api
     ////////////////////////////////////
@@ -103,7 +102,6 @@ $(document).ready(function() {
                     //////////////////////////////////////////////////
                     //////////////////////////////////////////////////
                     // title (this is not the same as repo name)    //
-                    // repo name pulled from api request            //
                     // watchers                                     //
                     // star gazors                                  //
                     // forked count                                 //
@@ -113,6 +111,7 @@ $(document).ready(function() {
                     // issues count (find url via schema of route)  //
                     //////////////////////////////////////////////////
                     //////////////////////////////////////////////////
+
 
 
                 })
@@ -136,6 +135,22 @@ $(document).ready(function() {
     // functions
     ////////////////////////////////////
 
+    const getRecentCommitMessages = (commit_url) => {
+        $.ajax({
+            url: `${commit_url}`,
+            method: "GET"
+        })
+        .then(function(data) {
+            //console.log(data);
+            let totalCommits = data[0].length;
+            let mostRecentCommit = data[0].commit.message;
+            let whoWroteIt = data[0].author.login;
+            console.log(`${whoWroteIt} commited "${mostRecentCommit}": out of a total of ${totalCommits} commits.`)
+        })
+        .catch(function(err) {
+            console.log("Error in commit messages.")
+        });
+    };
 
     const updateData = (obj) => {
         gitPic.attr("style", `background-image: url(${obj.img})`);
@@ -158,6 +173,10 @@ $(document).ready(function() {
             //make a new div.
            let gitCard = $("<div>");
            gitCard.addClass("git_card");
+           let nameOfProject = names[pinned_item]; // create a variable to store the object. this will convert it to a string and allow us to use methods on it.
+           gitCard.attr("name", nameOfProject.toLowerCase());
+           let userName = gitInput[0].value.trim();
+           gitCard.attr("commit", `https://api.github.com/repos/${userName}/${nameOfProject}/commits`);
 
            let imgTag = item.toString().replace("img", "img class=git_pinned_img");
            // make a string out of the item in this array.
@@ -190,6 +209,16 @@ $(document).ready(function() {
 
     $("#git_search").click(() => {
         runApiCall(gitInput[0].value.trim());  
+    });
+
+    document.addEventListener('click', function(event) {
+        if ($(event.target).parent().attr("commit") != undefined) {
+            // correct thing was clicked. Run API call.
+            getRecentCommitMessages($(event.target).parent().attr("commit"));
+
+        } else {
+            return;
+        }
     });
 
     $("input").keyup((event) => {
