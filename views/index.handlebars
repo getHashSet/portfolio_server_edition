@@ -27,9 +27,9 @@
     {{!--              --}}
 
     <header id="hero">
-        <div id="pixel_board">
 
-        </div>
+        <div id="pixel_board"></div>
+
         <div>
             <h1></h1>
             <h2>Design &VerticalLine; FrontEnd &VerticalLine; BackEnd </h2>
@@ -58,9 +58,10 @@
 
         <div class="block_bottom"></div>
 
-        <div class="info">
-            <ion-icon name="quote"></ion-icon>
-        </div>
+    <div class="side_menu">
+        <div class="quote side_menu_item" section="projects"> <ion-icon name="quote"></ion-icon> </div>
+        <div class="info side_menu_item"> <ion-icon name="settings"></ion-icon> </div>
+    </div>
 
     </section>
 
@@ -71,9 +72,7 @@
     <section id="c2" class="chapter">
 
         {{!-- build this blockquote inside blockquote.js --}}
-        <div>
-            <ion-icon name="quote"></ion-icon>
-        </div>
+        <div class="background_quote"><ion-icon name="quote"></ion-icon></div>
 
         <blockquote>
             <span>I would love to talk about &thinsp; </span>
@@ -83,9 +82,10 @@
             </span>
         </blockquote>
 
-        <div class="info">
-            <ion-icon name="quote"></ion-icon>
-        </div>
+    <div class="side_menu">
+        <div class="quote side_menu_item" section="skills"> <ion-icon name="quote"></ion-icon> </div>
+        <div class="info side_menu_item"> <ion-icon name="settings"></ion-icon> </div>
+    </div>
 
     </section>
 
@@ -142,9 +142,10 @@
 
         </div>
 
-        <div class="info">
-            <ion-icon name="quote"></ion-icon>
-        </div>
+    <div class="side_menu">
+        <div class="quote side_menu_item" section="git"> <ion-icon name="quote"></ion-icon> </div>
+        <div class="info side_menu_item"> <ion-icon name="settings"></ion-icon> </div>
+    </div>
 
     </section>
 
@@ -213,9 +214,10 @@
 
         {{!-- scroll magic section with code blocks --}}
 
-        <div class="info">
-            <ion-icon name="quote"></ion-icon>
-        </div>
+    <div class="side_menu">
+        <div class="quote side_menu_item" section="history"> <ion-icon name="quote"></ion-icon> </div>
+        <div class="info side_menu_item"> <ion-icon name="settings"></ion-icon> </div>
+    </div>
 
     </section>
 
@@ -244,9 +246,10 @@
 
         </div>
 
-        <div class="info">
-            <ion-icon name="quote"></ion-icon>
-        </div>
+    <div class="side_menu">
+        <div class="quote side_menu_item" section="readme"> <ion-icon name="quote"></ion-icon> </div>
+        <div class="info side_menu_item"> <ion-icon name="settings"></ion-icon> </div>
+    </div>
 
     </section>
 
@@ -306,6 +309,11 @@
             </div>
         </div>
 
+    <div class="side_menu">
+        <div class="quote side_menu_item" section="contact"> <ion-icon name="quote"></ion-icon> </div>
+        <div class="info side_menu_item"> <ion-icon name="settings"></ion-icon> </div>
+    </div>
+
     </section>
 
     {{!--              --}}
@@ -325,6 +333,16 @@
 
     </section>
 
+</div>
+
+{{!--              --}}
+{{!--    Toast     --}}
+{{!--              --}}
+
+<div id="toast"></div>
+<div id="toast_data"> 
+    <div class="close_button"><ion-icon name="close"></ion-icon></div>
+    {{!-- loaded via index.js file --}}
 </div>
 
 <!-- jQuery -->

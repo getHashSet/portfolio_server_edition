@@ -396,7 +396,7 @@ section {
 	text-align: left;
 	overflow: hidden;
 		
-	div:first-child { 
+	.background_quote { 
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -937,28 +937,38 @@ section {
 	display: block;
 }
 
-.info {
+.side_menu {
 	position: absolute;
-	font-size: 1.2em;
 	top: 0;
 	right: 0;
-	width: 1em;
-	height: 1em;
-	padding: .5em;
-	user-select: none;
 	border-radius: 5px 0 0 5px;
-	margin: .5em 0 1em 1em;
-	background-color: rgba($dark, .7);
 	color: #fff;
-	transition: transform .5s;
-	display: none;
+
+	.side_menu_item {		
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 1.2em;
+		width: 1em;
+		height: 1em;
+		padding: .5em;
+		user-select: none;
+		border-radius: 5px 0 0 5px;
+		margin: .5em 0 0 0;
+		background-color: rgba($dark, .7);
+		transition: transform .5s;
+	}
+
+	.info {
+		display: none;
+	}
 }
 
-.info:hover{
+.side_menu_item:hover{
 	cursor: pointer;
 }
 
-.info:active ion-icon {
+.side_menu_item:active ion-icon {
 	transform: translateY(4px);
 }
 
@@ -1068,5 +1078,69 @@ section {
 .col-4,
 .col-6,
 .col-12 {
+	display: none;
+}
+////////////
+// toast
+////////////
+
+#toast {
+	user-select: none;
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba($dark, .5);
+	justify-content: center;
+	align-items: center;
+	display: none;
+	z-index: 9998;
+}
+
+#toast_data {
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+	width: 80vw;
+	max-width: 1080px;
+	height: 70vh;
+	min-height: 70vh;
+	background-color: $light;
+	display: none;
+	outline: 8px solid $light;
+	outline-offset: 1em;
+	z-index: 9999;
+
+	.close_button {
+		user-select: none;
+		position: absolute;
+		top: .5em;
+		right: .5em;
+		width: 1em;
+		height: 1em;
+		font-size: 2em;
+		color: $dark;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		transition: transform 1s;
+	}
+
+	.close_button:hover {
+		cursor: pointer;
+	}
+
+	.close_button:active {
+		transform: translateY(4px);
+	}
+}
+
+////////////
+// hide will always be the most bottom item.
+////////////
+
+.__hide {
 	display: none;
 }

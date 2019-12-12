@@ -1,11 +1,15 @@
 // Get references to page elements
-var $exampleText = $("#example-text");
-var $exampleDescription = $("#example-description");
-var $submitBtn = $("#submit");
-var $exampleList = $("#example-list");
+let $exampleText = $("#example-text");
+let $exampleDescription = $("#example-description");
+let $submitBtn = $("#submit");
+let $exampleList = $("#example-list");
+
+////////////////////////
+// API routes
+////////////////////////
 
 // The API object contains methods for each kind of request we'll make
-var API = {
+let API = {
   saveExample: function(example) {
     return $.ajax({
       headers: {
@@ -31,21 +35,21 @@ var API = {
 };
 
 // refreshExamples gets new examples from the db and repopulates the list
-var refreshExamples = function() {
+let refreshExamples = function() {
   API.getExamples().then(function(data) {
-    var $examples = data.map(function(example) {
-      var $a = $("<a>")
+    let $examples = data.map(function(example) {
+      let $a = $("<a>")
         .text(example.text)
         .attr("href", "/example/" + example.id);
 
-      var $li = $("<li>")
+      let $li = $("<li>")
         .attr({
           class: "list-group-item",
           "data-id": example.id
         })
         .append($a);
 
-      var $button = $("<button>")
+      let $button = $("<button>")
         .addClass("btn btn-danger float-right delete")
         .text("ｘ");
 
@@ -61,10 +65,10 @@ var refreshExamples = function() {
 
 // handleFormSubmit is called whenever we submit a new example
 // Save the new example to the db and refresh the list
-var handleFormSubmit = function(event) {
+let handleFormSubmit = function(event) {
   event.preventDefault();
 
-  var example = {
+  let example = {
     text: $exampleText.val().trim(),
     description: $exampleDescription.val().trim()
   };
@@ -84,8 +88,8 @@ var handleFormSubmit = function(event) {
 
 // handleDeleteBtnClick is called when an example's delete button is clicked
 // Remove the example from the db and refresh the list
-var handleDeleteBtnClick = function() {
-  var idToDelete = $(this)
+let handleDeleteBtnClick = function() {
+  let idToDelete = $(this)
     .parent()
     .attr("data-id");
 
@@ -98,9 +102,9 @@ var handleDeleteBtnClick = function() {
 $submitBtn.on("click", handleFormSubmit);
 $exampleList.on("click", ".delete", handleDeleteBtnClick);
 
-////////////
+////////////////////////////////////
 // buttons
-////////////
+////////////////////////////////////
 
 $("#menu_button").click(function() {
   $("nav").css("transform", "translateY(-101%)");
@@ -127,4 +131,49 @@ $("#login-button").keyup(function(event) {
 const badPassword = () => {
   $("#ion-icon_button").attr("name", "ios-thumbs-down");
   $("#login_button").addClass("bounce_small");
+};
+
+////////////
+// quotes
+////////////
+
+const toast = $("#toast");
+const toastData = $("#toast_data");
+
+$(".quote").click(function() {
+  let clickedSection = $(this).attr("section");
+
+  $(toast).css("display", "flex");
+  $(toastData).css("display", "flex");
+
+  $(toastData).html( sectionQuoteData(clickedSection));
+
+});
+
+$(".close_button").click(function() {
+  $(toast).css("display", "none");
+  $(toastData).css("display", "none");
+});
+
+$("#toast").click(function() {
+  $(toast).css("display", "none");
+  $(toastData).css("display", "none");
+});
+
+////////////////////////////////////
+// functions
+////////////////////////////////////
+
+// use this function to return HTML with markup and classes to the page.
+const sectionQuoteData = sectionClicked => {
+  switch (sectionClicked) {
+    case "projects":
+      return "This is the projects section.";
+    case "git":
+      return "This is the git hub section. And boy is it a cool part of this app.";
+    case "skills":
+      return "<ul> <li>HTML5</li> <li>CSS3</li> <li>ES6</li> </ul>";
+    default:
+      return "You have clicked a quote button.";
+  }
 };

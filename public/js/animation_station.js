@@ -10,14 +10,13 @@ $( document ).ready(function() {
     // add id of the name_letter_number so that we can put it in an object.
     // use that object to animate.
     for (i = 0; i < myName.length; i++) {
-       
+       // check for white space
         if ( i === 7){
             theH1Tag.append(`<span id='name_space' class='letters'>${myName[i]}</span>`);
         } else {
             theH1Tag.append(`<span id='name_${myName[i]}${i}' class='letters'>${myName[i]}</span>`);
         };
         let thisletter = `name_${myName[i]}${i}`;
-        //myNameObj[`letter${i}`] = $(`#${thisletter}`);
         myNameArr.push(`${thisletter}`);
     };
 
