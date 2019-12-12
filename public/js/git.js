@@ -95,7 +95,26 @@ $(document).ready(function() {
                     method: "GET"
                 })
                 .then(function(git_repo_data){
-                    
+                    console.log(git_repo_data);
+
+                    //////////////////////////////////////////////////
+                    //////////////////////////////////////////////////
+                    // data I will need                             //
+                    //////////////////////////////////////////////////
+                    //////////////////////////////////////////////////
+                    // title (this is not the same as repo name)    //
+                    // repo name pulled from api request            //
+                    // watchers                                     //
+                    // star gazors                                  //
+                    // forked count                                 //
+                    // link                                         //
+                    // about this project (pulled from scrape)      //
+                    // last commit message (requires second call maybe make this a button?) // button must contain url for call schema is api.github.com/repos/$$user/$$reponame/commits [location] Obj[0].commit.message / also get Obj[0].author.name
+                    // issues count (find url via schema of route)  //
+                    //////////////////////////////////////////////////
+                    //////////////////////////////////////////////////
+
+
                 })
                 .catch(function(error_repoData){
 
