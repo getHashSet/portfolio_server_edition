@@ -59,13 +59,19 @@ $(document).ready(function() {
             // link to personal url
             data.blog ? gitObj.website = data.blog : gitObj.website = data.html_url;
             
+            // following
+            gitObj.following = data.following_url;
+            
+            // repos url
+            gitObj.repos = data.repos_url;
+
             //console.log(gitObj);
 
             // Tell the page to update the data.
             updateData(gitObj);
 
             ////////////
-            // Second Call is to scrape Git for data;
+            // second Call is to scrape Git for data;
             ////////////
 
             $.ajax({
@@ -73,22 +79,37 @@ $(document).ready(function() {
                 method: "POST",
                 data: { git: gitObj.link}
             })
-            .then(function(scrapeData){
+            .then(function(scrapeData) {
                 //console.log(scrapeData);
 
                 gitBlocks.html(scrapeData[0].html);
 
                 // make pinned items
                 makePinnedItems(scrapeData[0].gitImages, scrapeData[0].pinnedObjects);
+
+                ////////////
+                // Third Call fills out pinned items using git data about those repos
+                ////////////
+                $.ajax({
+                    url: `${gitObj.repos}`,
+                    method: "GET"
+                })
+                .then(function(git_repo_data){
+                    
+                })
+                .catch(function(error_repoData){
+
+                }); // end of repo data call
+
             })
-            .catch(function(err){
+            .catch(function(err) {
                 console.log("Issue with Git request.");
             }); // end of Git Scrape.
 
         })
-        .catch(function(err){
-            console.log("Can't find what you're looking for.");
-        });
+        .catch(function(err) {
+            console.log("Cannot Collect Git Data (CCGD error)");
+        }); // end of ajax calls for github
     };
 
 
