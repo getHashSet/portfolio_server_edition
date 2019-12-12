@@ -451,7 +451,9 @@ section {
 		justify-content: center;
 
 		div:first-child {
-			flex-wrap: nowrap;
+			flex-wrap: wrap;
+			justify-content: center;
+			align-items: center;
 		}
 
 		div {
@@ -1107,6 +1109,7 @@ section {
 	max-width: 1080px;
 	height: 70vh;
 	min-height: 70vh;
+	padding: 1em;
 	background-color: $light;
 	display: none;
 	outline: 8px solid $light;

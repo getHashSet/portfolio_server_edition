@@ -33,7 +33,7 @@ $(document).ready(function() {
             method: "GET"
         })
         .then(function(data){
-            //console.log(data);
+            console.log(data);
 
             // img
             gitObj.img = data.avatar_url;
@@ -59,6 +59,8 @@ $(document).ready(function() {
             // link to personal url
             data.blog ? gitObj.website = data.blog : gitObj.website = data.html_url;
             
+            //console.log(gitObj);
+
             // Tell the page to update the data.
             updateData(gitObj);
 

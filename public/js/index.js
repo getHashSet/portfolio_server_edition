@@ -146,7 +146,7 @@ $(".quote").click(function() {
   $(toast).css("display", "flex");
   $(toastData).css("display", "flex");
 
-  $(toastData).html( sectionQuoteData(clickedSection));
+  $(".toast_html").html( sectionQuoteData(clickedSection));
 
 });
 
@@ -168,12 +168,18 @@ $("#toast").click(function() {
 const sectionQuoteData = sectionClicked => {
   switch (sectionClicked) {
     case "projects":
-      return "This is the projects section.";
+      return `This is the projects section.`;
     case "git":
-      return "This is the git hub section. And boy is it a cool part of this app.";
+      return `This is the git hub section. And boy is it a cool part of this app. Github API provides quite a bit of data on its own. But if you're familiar with the github object then you know it doesnt return all the data you are seeing here on this app. Try and go to your browser's console and type the following line git('getHashSet') this will display the data I parsed through using ajax.`;
     case "skills":
-      return "<ul> <li>HTML5</li> <li>CSS3</li> <li>ES6</li> </ul>";
-    default:
-      return "You have clicked a quote button.";
+      return `<ul> <li>HTML5</li> <li>CSS3</li> <li>ES6</li> </ul>`;
+    case "history":
+      return `<h2>These are the places I have worked. For a copy of my resume continue to the bottom of the page and you can request one right away by inputing your email and company name or by just asking matthew@getHashSet.com</h2>`;
+    case "readme":
+      return `Good coding standards are important. This applicaiton was built using those standards. In addtion I am comfortable using lint and respond well to feedback!`;
+    case "contact":
+      return `<p>Feel free to get in touch.</p>`;
+      default:
+      return `<h2>Card</h2>`;
   }
 };
