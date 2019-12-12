@@ -13,7 +13,7 @@ $(document).ready(function() {
     ////////////////////////////////////
 
     const gitObj = {
-
+        pinnedProjects: []
     };
 
     ////////////////////////////////////
@@ -79,12 +79,10 @@ $(document).ready(function() {
                 data: { git: gitObj.link}
             })
             .then(function(scrapeData) {
+                console.log("scrapeData")
                 console.log(scrapeData);
 
                 gitBlocks.html(scrapeData[0].html);
-
-                // make pinned items
-                makePinnedItems(scrapeData[0].gitImages, scrapeData[0].pinnedObjects);
 
                 ////////////
                 // Third Call fills out pinned items using git data about those repos
@@ -94,11 +92,12 @@ $(document).ready(function() {
                     method: "GET"
                 })
                 .then(function(git_repo_data){
+                    console.log("git_repo_data")
                     console.log(git_repo_data);
 
                     //////////////////////////////////////////////////
                     //////////////////////////////////////////////////
-                    // data I will need                             //
+                    // data we will need                             //
                     //////////////////////////////////////////////////
                     //////////////////////////////////////////////////
                     // title (this is not the same as repo name)    //
@@ -112,6 +111,42 @@ $(document).ready(function() {
                     //////////////////////////////////////////////////
                     //////////////////////////////////////////////////
 
+                    // esample of how to access the array of objects if and check for any value.
+                    // if they have no pinned projects
+                    // gitObj.pinnedProjects.forEach(pinnedProject => {
+                    //     console.log("This was able to access project " + pinnedProject);
+                    // });
+
+                    
+
+                //////////////////////////////
+                // make pinned items
+                //////////////////////////////
+                makePinnedItems(scrapeData[0].gitImages, scrapeData[0].pinnedObjects);
+
+                ////////////////
+                // Add data to the created pinned item.
+                ////////////////
+
+                    git_repo_data.forEach(gitRepo => {
+                        gitObj.pinnedProjects.forEach(pinnedItem => {
+                            if (gitRepo.name == pinnedItem){
+                                console.log(`-------------------------------------------------------------------`)
+
+                                console.log(`Name: ${gitRepo.name}`);
+                                console.log(`Description: ${gitRepo.description}`);
+                                console.log(`Forked: ${gitRepo.forks_count}.`);
+                                console.log(`Watchers: ${gitRepo.watchers_count}.`);
+                                console.log(`Stars: ${gitRepo.stargazers_count}.`);
+                                console.log(`Link: ${gitRepo.svn_url}`);
+                                console.log(`Do something with ${pinnedItem}`);
+                                console.log(gitRepo);
+                                console.log(`Commits: ${gitRepo.git_commits_url}`);
+
+                                console.log(`-------------------------------------------------------------------`)
+                            };
+                        });
+                    });
 
 
                 })
@@ -160,7 +195,7 @@ $(document).ready(function() {
     };
 
     const makePinnedItems = (arr, names) => {
-        //console.log("what up dog" + arr);
+
         let putThemHere = $("#git_pinned_items");
 
         let newWrapperDiv = $("<div>");
@@ -179,6 +214,9 @@ $(document).ready(function() {
             gitCard.attr("name", nameOfProject.toLowerCase());
             let userName = gitInput[0].value.trim();
             gitCard.attr("commit", `https://api.github.com/repos/${userName}/${nameOfProject}/commits`);
+            
+            console.log(`Building card for ${nameOfProject}`);
+            gitObj.pinnedProjects.push(nameOfProject);
            };
 
            let imgTag = item.toString().replace("img", "img class=git_pinned_img");
