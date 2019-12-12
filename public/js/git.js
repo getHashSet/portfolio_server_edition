@@ -79,7 +79,7 @@ $(document).ready(function() {
                 data: { git: gitObj.link}
             })
             .then(function(scrapeData) {
-                //console.log(scrapeData);
+                console.log(scrapeData);
 
                 gitBlocks.html(scrapeData[0].html);
 
@@ -170,13 +170,16 @@ $(document).ready(function() {
 
         arr.forEach(item => {
 
-            //make a new div.
+           //make a new div.
            let gitCard = $("<div>");
            gitCard.addClass("git_card");
-           let nameOfProject = names[pinned_item]; // create a variable to store the object. this will convert it to a string and allow us to use methods on it.
-           gitCard.attr("name", nameOfProject.toLowerCase());
-           let userName = gitInput[0].value.trim();
-           gitCard.attr("commit", `https://api.github.com/repos/${userName}/${nameOfProject}/commits`);
+
+           if (names[pinned_item] != null){
+            let nameOfProject = names[pinned_item]; // create a variable to store the object. this will convert it to a string and allow us to use methods on it.
+            gitCard.attr("name", nameOfProject.toLowerCase());
+            let userName = gitInput[0].value.trim();
+            gitCard.attr("commit", `https://api.github.com/repos/${userName}/${nameOfProject}/commits`);
+           };
 
            let imgTag = item.toString().replace("img", "img class=git_pinned_img");
            // make a string out of the item in this array.
