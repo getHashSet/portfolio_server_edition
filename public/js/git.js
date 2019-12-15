@@ -181,7 +181,7 @@ $(document).ready(function() {
     // functions
     ////////////////////////////////////
 
-    const getRecentCommitMessages = (commit_url) => {
+    const getRecentCommitMessages = (commit_url, commit_pTag) => {
         $.ajax({
             url: `${commit_url}`,
             method: "GET"
@@ -191,7 +191,8 @@ $(document).ready(function() {
             let totalCommits = data[0].length;
             let mostRecentCommit = data[0].commit.message;
             let whoWroteIt = data[0].author.login;
-            console.log(`${whoWroteIt} commited "${mostRecentCommit}": out of a total of ${totalCommits} commits.`)
+            //console.log(`${whoWroteIt} commited "${mostRecentCommit}": out of a total of ${totalCommits} commits.`)
+            $(commit_pTag).html(`"${mostRecentCommit}" <em>-by ${whoWroteIt}</em>`);
         })
         .catch(function(err) {
             console.log("Error in commit messages.")
@@ -214,6 +215,9 @@ $(document).ready(function() {
 
         let pinned_item = 0;
 
+        let deckOfGitCards = $("<div>");
+        deckOfGitCards.attr("id", "deck_of_git_cards");
+        
         arr.forEach(item => {
 
            //make a new div.
@@ -233,19 +237,21 @@ $(document).ready(function() {
            //       li class="this.name_eye" / _star / _git-network / _commit / _link / _issues
            //    p class="this.name_p"           //
            //                                    //
-           //                                    //
            ////////////////////////////////////////
            
+
            if (names[pinned_item] != null){
 
+            let currentName = names[pinned_item].toLowerCase().trim();
             
-            console.log(pinned_item);
-            console.log(`building ${names[pinned_item]}`);
+            //console.log(pinned_item);
+            //console.log(`building ${names[pinned_item]}`);
 
            ////////////////////////////////////////
            // 1.
            let cardWrap = $("<div>");
            cardWrap.addClass("card_wrap");
+           cardWrap.addClass(`${currentName}_card`);
 
            // 2.
            let imgWrap = $("<div>");
@@ -280,11 +286,11 @@ $(document).ready(function() {
 
            // 7. Create an array with the name of the porject plus the button name.
            let liArray = [
+               { name : `${names[pinned_item].toLowerCase()}_link`, ionicon : "ios-link", tooltip : "link"},
                { name : `${names[pinned_item].toLowerCase()}_eye`, ionicon : "eye", tooltip : "Watchers"},
                { name : `${names[pinned_item].toLowerCase()}_star`, ionicon : "star", tooltip : "Stars"},
                { name : `${names[pinned_item].toLowerCase()}_git-network`, ionicon : "ios-git-network", tooltip : "Forked"},
                { name : `${names[pinned_item].toLowerCase()}_commit`, ionicon : "ios-git-commit", tooltip : "Commit Message"},
-               { name : `${names[pinned_item].toLowerCase()}_link`, ionicon : "ios-link", tooltip : "link"},
                { name : `${names[pinned_item].toLowerCase()}_issues`, ionicon : "ios-construct", tooltip : "issues"}
            ]
 
@@ -292,10 +298,20 @@ $(document).ready(function() {
 
            let userName = gitInput[0].value.trim();
            let ulTag = $("<ul>");
+           let colorArrayValue = 0;
+           let colorArray = [
+               'background-color: #ebedf0; color: #2f3640',
+               'background-color: #c6e48b; color: #2f3640',
+               'background-color: #7bc96f; color: #2f3640',
+               'background-color: #239a3b; color: #fff',
+               'background-color: #196127; color: #fff',
+               'background-color: #2f3640; color: #fff'
+           ]
            liArray.forEach( listItem => {
                 // 8.
                 let createListItem = $("<li>");
                 createListItem.addClass(listItem.name); // example <li class="project2_eye">
+                createListItem.attr("style", colorArray[colorArrayValue]);
                 //createListItem.attr("commit", `https://api.github.com/repos/${userName}/${names[pinned_item]}/commits`);
                 createListItem.addClass("tooltip");
                 let tooltipSapn = $("<span>");
@@ -304,9 +320,12 @@ $(document).ready(function() {
                 createListItem.append(tooltipSapn);
                 let spanInsideListItem = $("<span>");
                 listItem.tooltip === "Commit Message" ?
-                spanInsideListItem.html(`<ion-icon class="${listItem.name}" name="${listItem.ionicon}" commit="https://api.github.com/repos/${userName}/${names[pinned_item]}/commits"></ion-icon>`) : // example <ion-icon name="project2_eye"></ion-icon>
-                spanInsideListItem.html(`<ion-icon class="${listItem.name}" name="${listItem.ionicon}"></ion-icon>`);
+                spanInsideListItem.html(`<ion-icon class="${listItem.name}" parent-class="${currentName}_about" name="${listItem.ionicon}" commit="https://api.github.com/repos/${userName}/${names[pinned_item]}/commits"></ion-icon>`) : // example <ion-icon name="project2_eye"></ion-icon>
+                spanInsideListItem.html(`<ion-icon class="${listItem.name}" parent-class="${currentName}_about" name="${listItem.ionicon}"></ion-icon>`);
                 createListItem.append(spanInsideListItem);
+
+                // add ++ to colorArrayValue so that it does not assign the same color to the backgrounds.
+                colorArrayValue++;
 
                 // last attach it to the <ul>
                 ulTag.append(createListItem);
@@ -327,7 +346,7 @@ $(document).ready(function() {
            // now add the card to the page.
            ////////////////////////////////////////
 
-           putThemHere.append(cardWrap);
+           deckOfGitCards.append(cardWrap);
         };
         //    // before building out a card. This will check to make sure a null value wasnt tossed in the mix.
         //    if (names[pinned_item] != null){
@@ -358,11 +377,10 @@ $(document).ready(function() {
         //    // add the card to the wrap div.
         //    newWrapperDiv.append(gitCard);
 
-           // 
            pinned_item++;
         });
 
-        //putThemHere.html(cardWrap);
+        putThemHere.html(deckOfGitCards);
     };
 
 
@@ -380,13 +398,12 @@ $(document).ready(function() {
         //console.log(event.target)
 
         $(event.target).parent().parent().attr("content") != undefined ?
-        console.log($(event.target).parent().parent().attr("content")) :
+        $(`.${$(event.target).attr("parent-class")}`).html($(event.target).parent().parent().attr("content")) :
         null;
 
         if ($(event.target).attr("commit") != undefined) {
             // correct thing was clicked. Run API call.
-            getRecentCommitMessages($(event.target).attr("commit"));
-
+            getRecentCommitMessages($(event.target).attr("commit"), $(`.${$(event.target).attr("parent-class")}`));
         } else {
             return;
         }

@@ -13,11 +13,14 @@
 
 #c4 .github .git_input_field {
   width: 85%;
-  margin: 2em .5em;
+  margin: 2.5em .5em;
   font-size: .85em; }
 
 #c4 .github .git_pinned_items {
   overflow: scroll; }
+
+#c4 .side_menu {
+  z-index: 32; }
 
 #c5 {
   height: 100vh; }
@@ -27,6 +30,9 @@
     text-align: center; }
 
 #c7 .business_card {
+  display: none; }
+
+.social_wrap {
   display: none; }
 
 svg {

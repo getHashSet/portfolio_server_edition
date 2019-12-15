@@ -40,13 +40,18 @@
 
         .git_input_field {
             width: 85%;
-            margin: 2em .5em;
+            margin: 2.5em .5em;
             font-size: .85em;
         }
 
         .git_pinned_items {
             overflow: scroll;
         }
+
+    }
+    
+    .side_menu {
+        z-index: 32;
     }
 }
 
@@ -63,6 +68,15 @@
     .business_card {
         display: none;
     }
+}
+
+
+////////////////
+// social media
+////////////////
+
+.social_wrap {
+    display: none;
 }
 
 ////////////////
