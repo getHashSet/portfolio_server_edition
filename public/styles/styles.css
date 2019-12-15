@@ -1206,6 +1206,11 @@ section {
     -o-transition: transform .3s, border-radius .3s;
     transition: transform .3s, border-radius .3s;
     transition: transform .3s, border-radius .3s, -webkit-transform .3s; }
+  .social_wrap .social_mail {
+    background-color: #ecf0f1;
+    color: #2d3436; }
+  .social_wrap .social_link {
+    background-color: #f39c12; }
   .social_wrap .social_github {
     background-color: #2ecc71; }
   .social_wrap .social_linkedin {

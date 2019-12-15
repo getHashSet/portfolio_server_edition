@@ -56,11 +56,29 @@
 }
 
 #c5 {
-    height: 100vh;
+    height: auto;
+    min-height: 100vh;
+
     h2 {
+        margin-top: 2em;
+        position: relative;
         font-size: 2em;
         width: 100%;
         text-align: center;
+    }
+
+    #apple,
+    #madden_media,
+    #bestbuy {
+        position: relative;
+        height: 300px;
+        left: 0;
+        top: 0;
+        margin: 1em;
+    }
+
+    .timeline_box {
+        display: none;
     }
 }
 

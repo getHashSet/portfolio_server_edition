@@ -1225,6 +1225,15 @@ section {
 		transition: transform .3s, border-radius .3s;
 	}
 	
+	.social_mail {
+		background-color: $light;
+		color: $dark;
+	}
+
+	.social_link {
+		background-color: #f39c12;
+	}
+
 	.social_github {
 		background-color: $success_highlight;
 	}

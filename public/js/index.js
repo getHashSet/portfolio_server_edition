@@ -160,6 +160,24 @@ $("#toast").click(function() {
   $(toastData).css("display", "none");
 });
 
+//////////
+// contact me
+//////////
+
+$(".social").click(function() {
+  if ($(this).hasClass("social_mail")) {
+    $("#qr_code").attr("src", "https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=matthew@gethashset.com");
+  } else if ( $(this).hasClass("social_link")) {
+    $("#qr_code").attr("src", "https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://gethashset.com");
+  } else if ( $(this).hasClass("social_linkedin")) {
+    $("#qr_code").attr("src", "https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://linkedin.com/in/matthewcarpenter22");
+  } else if ( $(this).hasClass("social_github")) {
+    $("#qr_code").attr("src", "https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://github.com/gethashset");
+  } else if ( $(this).hasClass("social_codepen")) {
+    $("#qr_code").attr("src", "https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=codePen_coming_soon");
+  };
+});
+
 ////////////////////////////////////
 // functions
 ////////////////////////////////////
