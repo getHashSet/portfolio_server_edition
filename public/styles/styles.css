@@ -542,8 +542,7 @@ section {
         -ms-flex-align: start;
         align-items: flex-start;
         -webkit-box-shadow: 1px 1px 2px rgba(45, 52, 54, 0.5);
-        box-shadow: 1px 1px 2px rgba(45, 52, 54, 0.5);
-        background-color: #ecf0f1; }
+        box-shadow: 1px 1px 2px rgba(45, 52, 54, 0.5); }
         #c4 .github #git_pinned_items .card_wrap .img_wrap {
           width: 25%;
           height: 100%;
@@ -558,8 +557,13 @@ section {
           align-items: center; }
           #c4 .github #git_pinned_items .card_wrap .img_wrap .place_img_here {
             width: 125px;
-            height: 125px;
-            background-color: #ecf0f1; }
+            height: 125px; }
+            #c4 .github #git_pinned_items .card_wrap .img_wrap .place_img_here .git_pinned_img {
+              width: 100%;
+              margin: 8px;
+              min-width: 100px;
+              min-height: 100px;
+              overflow: hidden; }
         #c4 .github #git_pinned_items .card_wrap .info {
           width: 70%;
           display: -webkit-box;
@@ -593,35 +597,12 @@ section {
                 -webkit-transform: translateY(5px);
                 -ms-transform: translateY(5px);
                 transform: translateY(5px); }
+            #c4 .github #git_pinned_items .card_wrap .info .title_links p {
+              text-align: start; }
           #c4 .github #git_pinned_items .card_wrap .info p {
             width: 100%;
             height: auto;
             padding: .5em; }
-      #c4 .github #git_pinned_items .git_card {
-        width: 200px;
-        -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-        text-align: center;
-        margin: 12px;
-        overflow: hidden; }
-        #c4 .github #git_pinned_items .git_card .git_pinned_img {
-          width: 100%;
-          height: 100%;
-          margin: 8px;
-          min-width: 100px;
-          min-height: 100px; }
-        #c4 .github #git_pinned_items .git_card h3 {
-          font-size: 1em;
-          font-weight: 700;
-          width: 100%; }
-      #c4 .github #git_pinned_items .git_card:hover .git_pinned_img {
-        cursor: pointer;
-        -webkit-box-shadow: 1px 1px 3px #2d3436;
-        box-shadow: 1px 1px 3px #2d3436; }
-      #c4 .github #git_pinned_items .git_card:active .git_pinned_img {
-        -webkit-transform: translateY(4px);
-        -ms-transform: translateY(4px);
-        transform: translateY(4px); }
     #c4 .github #git_blocks .position-relative {
       display: -webkit-box;
       display: -ms-flexbox;
@@ -1220,6 +1201,43 @@ section {
     -webkit-transform: translateY(4px);
     -ms-transform: translateY(4px);
     transform: translateY(4px); }
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black; }
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s;
+  -o-transition: opacity 0.3s;
+  transition: opacity 0.3s; }
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent; }
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1; }
 
 .__hide {
   display: none; }

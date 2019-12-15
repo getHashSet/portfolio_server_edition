@@ -128,13 +128,10 @@ $(document).ready(function() {
                 // Add data to the created pinned item.
                 ////////////////
 
-                console.log(gitObj.pinnedProjects);
-                console.log(gitObj.pinnedProjects);
-
                     git_repo_data.forEach(gitRepo => {
                         gitObj.pinnedProjects.forEach(pinnedItem => {
                             if (gitRepo.name == pinnedItem){
-                                console.log(`-------------------------------------------------------------------`)
+                                //console.log(`--------------------------------------------`)
 
                                 console.log(`Name: ${gitRepo.name}`);
                                 console.log(`Description: ${gitRepo.description}`);
@@ -143,10 +140,13 @@ $(document).ready(function() {
                                 console.log(`Stars: ${gitRepo.stargazers_count}.`);
                                 console.log(`Link: ${gitRepo.svn_url}`);
                                 console.log(`Do something with ${pinnedItem}`);
-                                console.log(gitRepo);
+                                //console.log(gitRepo);
                                 console.log(`Commits: ${gitRepo.git_commits_url}`);
 
-                                console.log(`-------------------------------------------------------------------`)
+                                console.log(`--------------------------------------------`)
+
+                               $(`.${gitRepo.name.toLowerCase()}_h2`)[0].innerHTML = gitRepo.name;
+                               $(`.${gitRepo.name.toLowerCase()}_about`)[0].innerHTML = gitRepo.description;
 
                             };
                         });
@@ -252,6 +252,9 @@ $(document).ready(function() {
                // add place_img_here to imgWrap
            imgWrap.append(placeImgHere);
 
+           let imgTag = item.toString().replace("img", "img class=git_pinned_img");
+           placeImgHere.append(imgTag);
+
            // 4.
            let info = $("<div>");
            info.addClass("info");
@@ -270,12 +273,12 @@ $(document).ready(function() {
 
            // 7. Create an array with the name of the porject plus the button name.
            let liArray = [
-               { name : `${names[pinned_item].toLowerCase()}_eye`, ionicon : "eye"},
-               { name : `${names[pinned_item].toLowerCase()}_star`, ionicon : "star"},
-               { name : `${names[pinned_item].toLowerCase()}_git-network`, ionicon : "ios-git-network"},
-               { name : `${names[pinned_item].toLowerCase()}_commit`, ionicon : "ios-git-commit"},
-               { name : `${names[pinned_item].toLowerCase()}_link`, ionicon : "ios-link"},
-               { name : `${names[pinned_item].toLowerCase()}_issues`, ionicon : "ios-construct"}
+               { name : `${names[pinned_item].toLowerCase()}_eye`, ionicon : "eye", tooltip : "Watchers"},
+               { name : `${names[pinned_item].toLowerCase()}_star`, ionicon : "star", tooltip : "Stars"},
+               { name : `${names[pinned_item].toLowerCase()}_git-network`, ionicon : "ios-git-network", tooltip : "Forked"},
+               { name : `${names[pinned_item].toLowerCase()}_commit`, ionicon : "ios-git-commit", tooltip : "Commit Message"},
+               { name : `${names[pinned_item].toLowerCase()}_link`, ionicon : "ios-link", tooltip : "link"},
+               { name : `${names[pinned_item].toLowerCase()}_issues`, ionicon : "ios-construct", tooltip : "issues"}
            ]
 
            // create a tag and then fill it with the list items in the array above.
@@ -285,6 +288,11 @@ $(document).ready(function() {
                 // 8.
                 let createListItem = $("<li>");
                 createListItem.addClass(listItem.name); // example <li class="project2_eye">
+                createListItem.addClass("tooltip");
+                let tooltipSapn = $("<span>");
+                tooltipSapn.addClass("tooltiptext");
+                tooltipSapn.html(listItem.tooltip);
+                createListItem.append(tooltipSapn);
                 let spanInsideListItem = $("<span>");
                 spanInsideListItem.html(`<ion-icon name="${listItem.ionicon}"></ion-icon>`); // example <ion-icon name="project2_eye"></ion-icon>
                 createListItem.append(spanInsideListItem);
@@ -322,9 +330,10 @@ $(document).ready(function() {
              gitObj.pinnedProjects.push(nameOfProject);
         //    };
 
-        //    let imgTag = item.toString().replace("img", "img class=git_pinned_img");
+              
         //    // make a string out of the item in this array.
-        //    //let imgTag = item.toString()
+              //let imgTag = item.toString()
+              
         //    // get the name of the project.
         //    let git_h3Tag = `<h3>${names[pinned_item]}</h3>`;
 
