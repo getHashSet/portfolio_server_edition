@@ -113,11 +113,13 @@ $( document ).ready(function() {
 
 
     let rollProjects = false;
+    let work1 = false;
+    let work2 = false;
+    let work3 = false;
 
     $(window).on('resize scroll', function() {
 
         if ($('.deck').isInViewport() && rollProjects == false) {
-            console.log("roll projects")
 
             rollProjects = true; 
             rollUp();
@@ -128,6 +130,22 @@ $( document ).ready(function() {
             //rollDown();
 
         }
+
+        if ($("#bestbuy").isInViewport() && work1 === false) {
+            work1 = true;
+            t3.from( $("#bestbuy"), 1, { x: -500, opacity: 0});
+        }
+
+        if ($("#apple").isInViewport() && work2 === false) {
+            work2 = true;
+            t3.from( $("#apple"), 1, { x: 500, opacity: 0});
+        }
+
+        if ($("#madden_media").isInViewport() && work3 === false) {
+            work3 = true;
+            t3.from( $("#madden_media"), 1, { x: -500, opacity: 0});
+        }
+
     });
 
 

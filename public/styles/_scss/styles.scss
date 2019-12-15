@@ -455,7 +455,23 @@ section {
 		flex-wrap: wrap;
 		justify-content: center;
 		z-index: 16;
+			
+		.section_break {
+			width: 100%;
+			margin: 1em 0 0 0;
+			display: flex;
+			justify-content: flex-start;
+			max-width: 1000px;	
 
+			h3 {
+				color: $dark;
+				padding: 0 0 4px 0;
+				border-bottom: 1px solid $dark;
+				max-width: 1200px;
+				min-width: 33%;
+			}
+		}
+		
 		div:first-child {
 			flex-wrap: nowrap;
 			justify-content: center;
@@ -716,6 +732,118 @@ section {
 		border: 1px solid $dark;
 		z-index: 5;
 	}
+			
+	.history_card {
+		position: relative;
+		width: 450px;
+		height: 230px;
+		padding: 1em;
+		background-color: $dark;
+		overflow: hidden;
+		color: #fff;
+		outline: 1px solid $dark;
+		outline-offset: .5em;
+						
+		.info_2007 {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-image: url(../../images/work_2.jpeg);
+			background-size: cover;
+			background-position: center;
+			background-repeat: no-repeat;
+			opacity: .5;
+		}
+
+		.info_2011 {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-image: url(../../images/work_1.jpg);
+			background-size: cover;
+			background-position: center;
+			background-repeat: no-repeat;
+			opacity: .5;
+		}
+
+		.info_2019 {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-image: url(../../images/work_3.jpg);
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: bottom center;
+			opacity: .3;
+		}
+
+		.info_wrap {
+				width: 100%;
+				height: 100%;
+				position: absolute;
+
+			h3 {
+				font-size: 1.5em;
+				font-weight: 700;
+			}
+
+			h4 {
+				font-size: .8em;
+				font-weight: 200;
+				border-bottom: 1px solid #fff;
+				width: 100%;
+				margin: .5em 0 4px 0;
+			}
+			
+			p {
+				margin-top: 1em;
+				max-width: 95%;
+			}
+		}
+
+	}
+
+	#year_2007 {
+		position: absolute;
+		top: 25%;
+		background-color: $primary;
+	}
+
+	#year_2011 {
+		position: absolute;
+		top: 45%;
+		background-color: $success;
+	}
+
+	#year_2019 {
+		position: absolute;
+		top: 85%;
+		background-color: #3498db;
+	}
+
+	#bestbuy {
+		position: absolute;
+		left: 5%;
+		top: 20%;
+	}
+
+	#apple {
+		position: absolute;
+		right: 5%;
+		top: 40%;
+	}
+
+	#madden_media {
+		position: absolute;
+		left: 5%;
+		bottom: 10%;
+	}
 
 	.timeline_box {
 		width: 100%;
@@ -730,98 +858,6 @@ section {
 			height: 100%;
 			border-right: 1px solid $light_highlight;
 			z-index: 2;
-			
-			.history_card {
-				position: relative;
-				width: 512px;
-				height: 256px;
-				padding: 1em;
-				background-color: $dark;
-				overflow: hidden;
-				color: #fff;
-
-								
-				.info_2007 {
-					position: absolute;
-					top: 0;
-					left: 0;
-					width: 100%;
-					height: 100%;
-					background-image: url(../../images/work_2.jpeg);
-					background-size: cover;
-					background-position: center;
-					background-repeat: no-repeat;
-					opacity: .5;
-				}
-
-				.info_2011 {
-					position: absolute;
-					top: 0;
-					left: 0;
-					width: 100%;
-					height: 100%;
-					background-image: url(../../images/work_1.jpg);
-					background-size: cover;
-					background-position: center;
-					background-repeat: no-repeat;
-					opacity: .5;
-				}
-
-				.info_2019 {
-					position: absolute;
-					top: 0;
-					left: 0;
-					width: 100%;
-					height: 100%;
-					background-image: url(../../images/work_3.jpg);
-					background-size: cover;
-					background-repeat: no-repeat;
-					background-position: bottom center;
-					opacity: .3;
-				}
-
-				.info_wrap {
-						width: 100%;
-						height: 100%;
-						position: absolute;
-
-					h3 {
-						font-size: 1.5em;
-						font-weight: 700;
-					}
-	
-					h4 {
-						font-size: .8em;
-						font-weight: 200;
-						border-bottom: 1px solid #fff;
-						width: 100%;
-						margin: .5em 0 4px 0;
-					}
-					
-					p {
-						margin-top: 1em;
-					}
-				}
-
-			}
-
-			#year_2007 {
-				position: absolute;
-				top: 25%;
-				background-color: $primary;
-			}
-
-			#year_2011 {
-				position: absolute;
-				top: 45%;
-				background-color: $success;
-			}
-
-			#year_2019 {
-				position: absolute;
-				top: 85%;
-				background-color: #3498db;
-			}
 	
 			.time_box {
 				background-color: inherit;

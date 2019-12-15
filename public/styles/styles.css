@@ -414,6 +414,22 @@ section {
     -ms-flex-pack: center;
     justify-content: center;
     z-index: 16; }
+    #c4 .github .section_break {
+      width: 100%;
+      margin: 1em 0 0 0;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: start;
+      -ms-flex-pack: start;
+      justify-content: flex-start;
+      max-width: 1000px; }
+      #c4 .github .section_break h3 {
+        color: #2d3436;
+        padding: 0 0 4px 0;
+        border-bottom: 1px solid #2d3436;
+        max-width: 1200px;
+        min-width: 33%; }
     #c4 .github div:first-child {
       -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
@@ -674,6 +690,89 @@ section {
     background-color: #ecf0f1;
     border: 1px solid #2d3436;
     z-index: 5; }
+  #c5 .history_card {
+    position: relative;
+    width: 450px;
+    height: 230px;
+    padding: 1em;
+    background-color: #2d3436;
+    overflow: hidden;
+    color: #fff;
+    outline: 1px solid #2d3436;
+    outline-offset: .5em; }
+    #c5 .history_card .info_2007 {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url(../../images/work_2.jpeg);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      opacity: .5; }
+    #c5 .history_card .info_2011 {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url(../../images/work_1.jpg);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      opacity: .5; }
+    #c5 .history_card .info_2019 {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url(../../images/work_3.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: bottom center;
+      opacity: .3; }
+    #c5 .history_card .info_wrap {
+      width: 100%;
+      height: 100%;
+      position: absolute; }
+      #c5 .history_card .info_wrap h3 {
+        font-size: 1.5em;
+        font-weight: 700; }
+      #c5 .history_card .info_wrap h4 {
+        font-size: .8em;
+        font-weight: 200;
+        border-bottom: 1px solid #fff;
+        width: 100%;
+        margin: .5em 0 4px 0; }
+      #c5 .history_card .info_wrap p {
+        margin-top: 1em;
+        max-width: 95%; }
+  #c5 #year_2007 {
+    position: absolute;
+    top: 25%;
+    background-color: #e67e22; }
+  #c5 #year_2011 {
+    position: absolute;
+    top: 45%;
+    background-color: #27ae60; }
+  #c5 #year_2019 {
+    position: absolute;
+    top: 85%;
+    background-color: #3498db; }
+  #c5 #bestbuy {
+    position: absolute;
+    left: 5%;
+    top: 20%; }
+  #c5 #apple {
+    position: absolute;
+    right: 5%;
+    top: 40%; }
+  #c5 #madden_media {
+    position: absolute;
+    left: 5%;
+    bottom: 10%; }
   #c5 .timeline_box {
     width: 100%;
     height: 100%;
@@ -692,74 +791,6 @@ section {
       height: 100%;
       border-right: 1px solid #95a5a6;
       z-index: 2; }
-      #c5 .timeline_box .timeline .history_card {
-        position: relative;
-        width: 512px;
-        height: 256px;
-        padding: 1em;
-        background-color: #2d3436;
-        overflow: hidden;
-        color: #fff; }
-        #c5 .timeline_box .timeline .history_card .info_2007 {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background-image: url(../../images/work_2.jpeg);
-          background-size: cover;
-          background-position: center;
-          background-repeat: no-repeat;
-          opacity: .5; }
-        #c5 .timeline_box .timeline .history_card .info_2011 {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background-image: url(../../images/work_1.jpg);
-          background-size: cover;
-          background-position: center;
-          background-repeat: no-repeat;
-          opacity: .5; }
-        #c5 .timeline_box .timeline .history_card .info_2019 {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background-image: url(../../images/work_3.jpg);
-          background-size: cover;
-          background-repeat: no-repeat;
-          background-position: bottom center;
-          opacity: .3; }
-        #c5 .timeline_box .timeline .history_card .info_wrap {
-          width: 100%;
-          height: 100%;
-          position: absolute; }
-          #c5 .timeline_box .timeline .history_card .info_wrap h3 {
-            font-size: 1.5em;
-            font-weight: 700; }
-          #c5 .timeline_box .timeline .history_card .info_wrap h4 {
-            font-size: .8em;
-            font-weight: 200;
-            border-bottom: 1px solid #fff;
-            width: 100%;
-            margin: .5em 0 4px 0; }
-          #c5 .timeline_box .timeline .history_card .info_wrap p {
-            margin-top: 1em; }
-      #c5 .timeline_box .timeline #year_2007 {
-        position: absolute;
-        top: 25%;
-        background-color: #e67e22; }
-      #c5 .timeline_box .timeline #year_2011 {
-        position: absolute;
-        top: 45%;
-        background-color: #27ae60; }
-      #c5 .timeline_box .timeline #year_2019 {
-        position: absolute;
-        top: 85%;
-        background-color: #3498db; }
       #c5 .timeline_box .timeline .time_box {
         background-color: inherit;
         -webkit-transform: translateX(-50%);
