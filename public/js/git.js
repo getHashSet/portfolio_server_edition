@@ -92,8 +92,8 @@ $(document).ready(function() {
                     method: "GET"
                 })
                 .then(function(git_repo_data){
-                    console.log("git_repo_data")
-                    console.log(git_repo_data);
+                    //console.log("git_repo_data")
+                    //console.log(git_repo_data);
 
                     //////////////////////////////////////////////////
                     //////////////////////////////////////////////////
@@ -128,6 +128,9 @@ $(document).ready(function() {
                 // Add data to the created pinned item.
                 ////////////////
 
+                console.log(gitObj.pinnedProjects);
+                console.log(gitObj.pinnedProjects);
+
                     git_repo_data.forEach(gitRepo => {
                         gitObj.pinnedProjects.forEach(pinnedItem => {
                             if (gitRepo.name == pinnedItem){
@@ -144,6 +147,7 @@ $(document).ready(function() {
                                 console.log(`Commits: ${gitRepo.git_commits_url}`);
 
                                 console.log(`-------------------------------------------------------------------`)
+
                             };
                         });
                     });
@@ -209,37 +213,136 @@ $(document).ready(function() {
            let gitCard = $("<div>");
            gitCard.addClass("git_card");
 
+           ////////////////////////////////////////
+           //                                    //
+           //  Order to build the card correctly //
+           //  div - class="card_wrap"           //
+           //   div - class="img_wrap"           //
+           //    div - class="place_img_here"    //
+           //   div class="info"                 //
+           //    div class="title_links"         //
+           //      h2 class="this.name_h2" -- this will be used to add the title after it's been built
+           //      ul                            //
+           //       li class="this.name_eye" / _star / _git-network / _commit / _link / _issues
+           //    p class="this.name_p"           //
+           //                                    //
+           //                                    //
+           ////////////////////////////////////////
+           
            if (names[pinned_item] != null){
-            let nameOfProject = names[pinned_item]; // create a variable to store the object. this will convert it to a string and allow us to use methods on it.
-            gitCard.attr("name", nameOfProject.toLowerCase());
-            let userName = gitInput[0].value.trim();
-            gitCard.attr("commit", `https://api.github.com/repos/${userName}/${nameOfProject}/commits`);
+
             
-            console.log(`Building card for ${nameOfProject}`);
-            gitObj.pinnedProjects.push(nameOfProject);
-           };
+            console.log(pinned_item);
+            console.log(`building ${names[pinned_item]}`);
 
-           let imgTag = item.toString().replace("img", "img class=git_pinned_img");
-           // make a string out of the item in this array.
-           //let imgTag = item.toString()
-           // get the name of the project.
-           let git_h3Tag = `<h3>${names[pinned_item]}</h3>`;
+           ////////////////////////////////////////
+           // 1.
+           let cardWrap = $("<div>");
+           cardWrap.addClass("card_wrap");
 
-           // add the img to git card
-           // add a title to the card
-           gitCard.append(imgTag);
-           gitCard.append(git_h3Tag);
+           // 2.
+           let imgWrap = $("<div>");
+           imgWrap.addClass("img_wrap");
+           cardWrap.append(imgWrap);
 
-           names[pinned_item] == null ? null : 
+           // 3.
+           let placeImgHere = $("<div>");
+           placeImgHere.addClass("place_img_here");
+           placeImgHere.addClass(`${names[pinned_item].toLowerCase()}_img`); // example project2_img;
+               // add place_img_here to imgWrap
+           imgWrap.append(placeImgHere);
 
-           // add the card to the wrap div.
-           newWrapperDiv.append(gitCard);
+           // 4.
+           let info = $("<div>");
+           info.addClass("info");
+           cardWrap.append(info);
+        
+           // 5.
+           let titleLinks = $("<div>");
+           titleLinks.addClass("title_links");
+           info.append(titleLinks);
+
+           // 6.
+           let h2Tag = $("<h2>");
+           h2Tag.addClass(`${names[pinned_item].toLowerCase()}_h2`);
+                // add to title_links
+            titleLinks.append(h2Tag);
+
+           // 7. Create an array with the name of the porject plus the button name.
+           let liArray = [
+               { name : `${names[pinned_item].toLowerCase()}_eye`, ionicon : "eye"},
+               { name : `${names[pinned_item].toLowerCase()}_star`, ionicon : "star"},
+               { name : `${names[pinned_item].toLowerCase()}_git-network`, ionicon : "ios-git-network"},
+               { name : `${names[pinned_item].toLowerCase()}_commit`, ionicon : "ios-git-commit"},
+               { name : `${names[pinned_item].toLowerCase()}_link`, ionicon : "ios-link"},
+               { name : `${names[pinned_item].toLowerCase()}_issues`, ionicon : "ios-construct"}
+           ]
+
+           // create a tag and then fill it with the list items in the array above.
+
+           let ulTag = $("<ul>");
+           liArray.forEach( listItem => {
+                // 8.
+                let createListItem = $("<li>");
+                createListItem.addClass(listItem.name); // example <li class="project2_eye">
+                let spanInsideListItem = $("<span>");
+                spanInsideListItem.html(`<ion-icon name="${listItem.ionicon}"></ion-icon>`); // example <ion-icon name="project2_eye"></ion-icon>
+                createListItem.append(spanInsideListItem);
+
+                // last attach it to the <ul>
+                ulTag.append(createListItem);
+           });
+             // append to info
+           titleLinks.append(ulTag);
+
+           // 9.
+           let pTag = $("<p>");
+           pTag.addClass("about");
+           pTag.addClass(`${names[pinned_item].toLowerCase()}_about`);
+
+           titleLinks.append(pTag);
+
+           // 10. build it
+           
+
+           // now add the card to the page.
+           ////////////////////////////////////////
+
+           putThemHere.append(cardWrap);
+        };
+        //    // before building out a card. This will check to make sure a null value wasnt tossed in the mix.
+        //    if (names[pinned_item] != null){
+
+             let nameOfProject = names[pinned_item]; // create a variable to store the object. this will convert it to a string and allow us to use methods on it.
+        //     gitCard.attr("name", nameOfProject.toLowerCase());
+        //     let userName = gitInput[0].value.trim();
+        //     gitCard.attr("commit", `https://api.github.com/repos/${userName}/${nameOfProject}/commits`);
+            
+        //     console.log(`Building card for ${nameOfProject}`);
+             gitObj.pinnedProjects.push(nameOfProject);
+        //    };
+
+        //    let imgTag = item.toString().replace("img", "img class=git_pinned_img");
+        //    // make a string out of the item in this array.
+        //    //let imgTag = item.toString()
+        //    // get the name of the project.
+        //    let git_h3Tag = `<h3>${names[pinned_item]}</h3>`;
+
+        //    // add the img to git card
+        //    // add a title to the card
+        //    gitCard.append(imgTag);
+        //    gitCard.append(git_h3Tag);
+
+        //    names[pinned_item] == null ? null : 
+
+        //    // add the card to the wrap div.
+        //    newWrapperDiv.append(gitCard);
 
            // 
            pinned_item++;
         });
 
-        putThemHere.html(newWrapperDiv);
+        //putThemHere.html(cardWrap);
     };
 
 

@@ -430,76 +430,6 @@ section {
 
 #c3 {
 	position: relative;
-
-	.card_wrap {
-		position: relative;
-		width: 512px;
-		min-height: 125px;
-		padding: 1em;
-		display: flex;
-		justify-content: space-evenly;
-		align-items: flex-start;
-		box-shadow: 1px 1px 2px rgba($dark, .5);
-		background-color: $light;
-
-		.img_wrap {
-			width: 25%;
-			height: 100%;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-
-			.place_img_here {
-				width: 125px;
-				height: 125px;
-				background-color: $dark;
-			}
-		}
-
-		.info {
-			width: 70%;
-			display: flex;
-			flex-wrap: wrap;
-			overflow: hidden;
-
-			.title_links {
-					width: 100%;
-
-				h2 {
-					width: 100%;
-					height: 2em;
-					border-bottom: 1px solid $dark;
-					display: block;
-				}
-	
-				ul { 
-					position: absolute;
-					top: 0;
-					right: 0;
-					display: flex;
-					flex-wrap: nowrap;
-					z-index: 256;
-	
-					li {
-						padding: .2em;
-						background-color: $dark;
-						color: $light;
-
-					}
-
-					li:active ion-icon{
-						transform: translateY(5px);
-					}
-				}
-			}
-
-			p {
-				width: 100%;
-				height: auto;
-				padding: .5em;
-			}
-		}
-	}
 }
 
 #c4 {
@@ -615,13 +545,93 @@ section {
 			}
 		}
 
-		.git_pinned_items {
-			max-width: 800px;
+		#git_pinned_items {
+			max-width: 1100px;
 			display: flex;
 			flex-wrap: wrap;
-			justify-content: space-between;
+			justify-content: space-evenly;
 			align-items: flex-start;
 			margin: 1em 0;
+
+
+			//////////////
+			// start
+			//////////////
+
+			.card_wrap {
+				position: relative;
+				width: 500px;
+				min-height: 125px;
+				padding: 8px;
+				margin: 8px;
+				display: flex;
+				justify-content: space-evenly;
+				align-items: flex-start;
+				box-shadow: 1px 1px 2px rgba($dark, .5);
+				background-color: $light;
+
+				.img_wrap {
+					width: 25%;
+					height: 100%;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+
+					.place_img_here {
+						width: 125px;
+						height: 125px;
+						background-color: $light;
+					}
+				}
+
+				.info {
+					width: 70%;
+					display: flex;
+					flex-wrap: wrap;
+					overflow: hidden;
+
+					.title_links {
+							width: 100%;
+
+						h2 {
+							width: 100%;
+							height: 2em;
+							border-bottom: 1px solid $dark;
+							display: block;
+						}
+			
+						ul { 
+							position: absolute;
+							top: 0;
+							right: 0;
+							display: flex;
+							flex-wrap: nowrap;
+							z-index: 256;
+			
+							li {
+								padding: .2em;
+								background-color: $dark;
+								color: $light;
+
+							}
+
+							li:active ion-icon{
+								transform: translateY(5px);
+							}
+						}
+					}
+
+					p {
+						width: 100%;
+						height: auto;
+						padding: .5em;
+					}
+				}
+			}
+			//////////////
+			// fin
+			//////////////
+
 
 			.git_card {
 				width: 200px;
