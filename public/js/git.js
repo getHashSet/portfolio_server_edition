@@ -131,22 +131,29 @@ $(document).ready(function() {
                     git_repo_data.forEach(gitRepo => {
                         gitObj.pinnedProjects.forEach(pinnedItem => {
                             if (gitRepo.name == pinnedItem){
+
                                 //console.log(`--------------------------------------------`)
 
-                                console.log(`Name: ${gitRepo.name}`);
-                                console.log(`Description: ${gitRepo.description}`);
-                                console.log(`Forked: ${gitRepo.forks_count}.`);
-                                console.log(`Watchers: ${gitRepo.watchers_count}.`);
-                                console.log(`Stars: ${gitRepo.stargazers_count}.`);
-                                console.log(`Link: ${gitRepo.svn_url}`);
-                                console.log(`Do something with ${pinnedItem}`);
-                                //console.log(gitRepo);
-                                console.log(`Commits: ${gitRepo.git_commits_url}`);
+                                // console.log(`Name: ${gitRepo.name}`);
+                                // console.log(`Description: ${gitRepo.description}`);
+                                // console.log(`Forked: ${gitRepo.forks_count}.`);
+                                // console.log(`Watchers: ${gitRepo.watchers_count}.`);
+                                // console.log(`Stars: ${gitRepo.stargazers_count}.`);
+                                // console.log(`Link: ${gitRepo.svn_url}`);
+                                // console.log(`Do something with ${pinnedItem}`);
+                                console.log(gitRepo);
+                                // console.log(`Commits: ${gitRepo.git_commits_url}`);
 
-                                console.log(`--------------------------------------------`)
+                                // console.log(`--------------------------------------------`)
 
                                $(`.${gitRepo.name.toLowerCase()}_h2`)[0].innerHTML = gitRepo.name;
                                $(`.${gitRepo.name.toLowerCase()}_about`)[0].innerHTML = gitRepo.description;
+                               $(`.${gitRepo.name.toLowerCase()}_git-network`)[0].setAttribute("content", `This project has been forked ${gitRepo.forks_count} times.`);
+                               $(`.${gitRepo.name.toLowerCase()}_eye`)[0].setAttribute("content", `This repo has ${gitRepo.watchers_count} watchers.`);
+                               $(`.${gitRepo.name.toLowerCase()}_star`)[0].setAttribute("content", `This project has ${gitRepo.stargazers_count} stars.`);
+                               $(`.${gitRepo.name.toLowerCase()}_link`)[0].setAttribute("content", `Learn more by visiting the git repo <a href="${gitRepo.svn_url}">here</a>.`);
+                               $(`.${gitRepo.name.toLowerCase()}_commit`)[1].setAttribute("content", `undefined`);
+                               $(`.${gitRepo.name.toLowerCase()}_issues`)[0].setAttribute("content", `This repo has ${gitRepo.open_issues} open issues.`);
 
                             };
                         });
@@ -283,18 +290,22 @@ $(document).ready(function() {
 
            // create a tag and then fill it with the list items in the array above.
 
+           let userName = gitInput[0].value.trim();
            let ulTag = $("<ul>");
            liArray.forEach( listItem => {
                 // 8.
                 let createListItem = $("<li>");
                 createListItem.addClass(listItem.name); // example <li class="project2_eye">
+                //createListItem.attr("commit", `https://api.github.com/repos/${userName}/${names[pinned_item]}/commits`);
                 createListItem.addClass("tooltip");
                 let tooltipSapn = $("<span>");
                 tooltipSapn.addClass("tooltiptext");
                 tooltipSapn.html(listItem.tooltip);
                 createListItem.append(tooltipSapn);
                 let spanInsideListItem = $("<span>");
-                spanInsideListItem.html(`<ion-icon name="${listItem.ionicon}"></ion-icon>`); // example <ion-icon name="project2_eye"></ion-icon>
+                listItem.tooltip === "Commit Message" ?
+                spanInsideListItem.html(`<ion-icon class="${listItem.name}" name="${listItem.ionicon}" commit="https://api.github.com/repos/${userName}/${names[pinned_item]}/commits"></ion-icon>`) : // example <ion-icon name="project2_eye"></ion-icon>
+                spanInsideListItem.html(`<ion-icon class="${listItem.name}" name="${listItem.ionicon}"></ion-icon>`);
                 createListItem.append(spanInsideListItem);
 
                 // last attach it to the <ul>
@@ -364,10 +375,17 @@ $(document).ready(function() {
         runApiCall(gitInput[0].value.trim());  
     });
 
+    // use addEventListener to objects that are called after the dom was called.
     document.addEventListener('click', function(event) {
-        if ($(event.target).parent().attr("commit") != undefined) {
+        //console.log(event.target)
+
+        $(event.target).parent().parent().attr("content") != undefined ?
+        console.log($(event.target).parent().parent().attr("content")) :
+        null;
+
+        if ($(event.target).attr("commit") != undefined) {
             // correct thing was clicked. Run API call.
-            getRecentCommitMessages($(event.target).parent().attr("commit"));
+            getRecentCommitMessages($(event.target).attr("commit"));
 
         } else {
             return;

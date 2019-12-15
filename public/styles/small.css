@@ -28,3 +28,10 @@
 
 #c7 .business_card {
   display: none; }
+
+svg {
+  overflow: visible;
+  margin-right: 100%;
+  -webkit-transform: scale(0.9);
+  -ms-transform: scale(0.9);
+  transform: scale(0.9); }

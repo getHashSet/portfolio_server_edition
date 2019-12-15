@@ -411,7 +411,8 @@ section {
     flex-wrap: wrap;
     -webkit-box-pack: center;
     -ms-flex-pack: center;
-    justify-content: center; }
+    justify-content: center;
+    z-index: 16; }
     #c4 .github div:first-child {
       -ms-flex-wrap: wrap;
       flex-wrap: wrap;
@@ -525,7 +526,7 @@ section {
       -webkit-box-align: start;
       -ms-flex-align: start;
       align-items: flex-start;
-      margin: 1em 0; }
+      margin: 3em 0 1em 0; }
       #c4 .github #git_pinned_items .card_wrap {
         position: relative;
         width: 500px;
@@ -542,7 +543,8 @@ section {
         -ms-flex-align: start;
         align-items: flex-start;
         -webkit-box-shadow: 1px 1px 2px rgba(45, 52, 54, 0.5);
-        box-shadow: 1px 1px 2px rgba(45, 52, 54, 0.5); }
+        box-shadow: 1px 1px 2px rgba(45, 52, 54, 0.5);
+        background-color: #fff; }
         #c4 .github #git_pinned_items .card_wrap .img_wrap {
           width: 25%;
           height: 100%;
@@ -593,6 +595,16 @@ section {
                 padding: .2em;
                 background-color: #2d3436;
                 color: #ecf0f1; }
+                #c4 .github #git_pinned_items .card_wrap .info .title_links ul li span {
+                  -webkit-user-select: none;
+                  -moz-user-select: none;
+                  -ms-user-select: none;
+                  user-select: none; }
+                  #c4 .github #git_pinned_items .card_wrap .info .title_links ul li span ion-icon {
+                    -webkit-user-select: none;
+                    -moz-user-select: none;
+                    -ms-user-select: none;
+                    user-select: none; }
               #c4 .github #git_pinned_items .card_wrap .info .title_links ul li:active ion-icon {
                 -webkit-transform: translateY(5px);
                 -ms-transform: translateY(5px);

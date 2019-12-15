@@ -453,6 +453,7 @@ section {
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
+		z-index: 16;
 
 		div:first-child {
 			flex-wrap: wrap;
@@ -551,7 +552,7 @@ section {
 			flex-wrap: wrap;
 			justify-content: space-evenly;
 			align-items: flex-start;
-			margin: 1em 0;
+			margin: 3em 0 1em 0;
 
 
 			//////////////
@@ -568,6 +569,7 @@ section {
 				justify-content: space-evenly;
 				align-items: flex-start;
 				box-shadow: 1px 1px 2px rgba($dark, .5);
+				background-color: #fff;
 
 				.img_wrap {
 					width: 25%;
@@ -619,6 +621,13 @@ section {
 								background-color: $dark;
 								color: $light;
 
+								span {
+									user-select: none;
+
+									ion-icon {
+										user-select: none;
+									}
+								}
 							}
 
 							li:active ion-icon{
@@ -673,6 +682,7 @@ section {
 		}
 
 	}
+
 }
 
 #c5 {
