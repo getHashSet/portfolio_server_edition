@@ -57,6 +57,9 @@ And to demonstrate my skill level in a MVC full-stack server based application.
 ## Hero
 ---
  
+
+ <img src="./public/images/readme_photos/hero.jpg" alt="hero image" style="width: 512px; border-radius: 0 5px 0 5px; margin: 1em;"/>
+
 This is the first imagery a user will see when the page loads. My name, title, and links to professional materials (via icons)
 
 Comment bar is excluded from this section (See Easter Eggs)
@@ -65,14 +68,20 @@ My name rolls in one letter at a time *(some edge cases remaining depending on s
  
 ## Section - Skills
 ---
- 
+
+
+ <img src="./public/images/readme_photos/talk_about_it.jpg" alt="hero image" style="width: 512px; border-radius: 0 5px 0 5px; margin: 1em;"/>
+
 In this section of the portfolio there is text that displays typing out a list of skills I would love to talk about. 
 
 “Quote”: clicking the quote section will display the brand logos on a grid using flexbox. 
  
 ## Section - Projects
 ---
- 
+
+
+ <img src="./public/images/readme_photos/section_2.jpg" alt="hero image" style="width: 512px; border-radius: 0 5px 0 5px; margin: 1em;"/>
+
 Projects is loaded in from a mySQL database and displayed as cards on the home page. 
 
 These projects demonstrate some of my favorite technical abilities and are great talking points. (Max of 6)
@@ -81,12 +90,17 @@ These projects demonstrate some of my favorite technical abilities and are great
  
 ## Section - Git
 ---
+
+
+ <img src="./public/images/readme_photos/git_2.jpg" alt="hero image" style="width: 512px; border-radius: 0 5px 0 5px; margin: 1em;"/>
  
 The first thing I thought about, and likely other developers think about, is how to get someone to our GitHub page. That’s where all my favorite projects are and the skill trajectory can be mapped out to better assess skills. 
 
 What better way to do that than with a full web application. This section pulls data from the GitHub API and returns a function object of data that can be parsed for relevant data. But that wasn’t enough. My server side application uses the npm packages, axios, and cheerio to pull additional information from the API data that’s not available using the non-OAth request and scrapes for the UI calendar that looks so magnificent on the user home page. 
 
 Using this collected data the section is built. 
+
+ <img src="./public/images/readme_photos/git_1.jpg" alt="hero image" style="width: 512px; border-radius: 0 5px 0 5px; margin: 1em;"/>
 
 The initial page load is from a cached pull that the server makes once a week (handling null values and edge cases to prevent issues for storing in the noSQL database.)
 
@@ -101,15 +115,29 @@ Give it a shot by clicking (here)[#]
 ---
  
 This section will display my work history using a timeline and animations.
+
+**(this section was cut for time.)**
  
 ## Section - Code
 ---
  
+
+
 This section of the web application will display README.md, html, scss, JavaScript coding practices as well as a few example pieces with links to the projects to see the code live. 
+
+It was added to every section on the right hand side. As you enter the section it will glide in and you can select it to see a quick peek at the ```README.md```
  
 ## Section - Contact
 ---
  
+ Feel free to check out any of the code you may come across. I have devided the javascript file into multiple sections *(not something I would normally do for any of the thematic or same page scripts.)*, but this will make it easier for other students or curious onlookers to parse through my code.
+
+ Some examples:
+
+ 
+ 
+ <img src="./public/images/readme_photos/my_card.jpg" alt="hero image" style="width: 512px; border-radius: 0 5px 0 5px; margin: 1em;"/>
+
 This section produces a business card containing a QR link to my professional materials. Each business card is color coded and displays a QR code scannable by any smart device. 
 
 This section also produces a get in touch field entry for users who would like to start a conversation (but who really does that?)
@@ -117,14 +145,23 @@ This section also produces a get in touch field entry for users who would like t
 ## Section - Locked
 ---
  
+ 
+ <img src="./public/images/readme_photos/unlock.jpg" alt="hero image" style="width: 512px; border-radius: 0 5px 0 5px; margin: 1em;"/>
+
 The locked section will allow any user that validates their email and name to gain access to my *filtered* resume.
 
 Once the email is valid using RegEx the next section displays a print download and email option for my resume.
+
+This section also updates it's content to be mobile friendly. No need to scan a QR code if you're already on your phone.
+
+ <img src="./public/images/readme_photos/mobile_2.jpg" alt="hero image" style="width: 256px; border-radius: 5px 5px 5px 5px; margin: 1em"/>
+
+ **Next Step:** Add a slide in email icon for quick access to email me about your project.
  
 ## Easter Egg
 ---
  
-Using an npm package and some custom classes you can use Konami Code to access developer mode from anywhere on the site. 
+Using an npm package and some custom classes you can use ```Konami Code``` to access developer mode from anywhere on the site. 
 
 This will produce a drop down menu and edit tools on all sections. You can edit all the sections you would like, but without the user name and password of an admin the site will not save to the database.
 
@@ -133,7 +170,21 @@ This tool acts as a CMS for... well me of course! This means I can update my web
 ## More
 ---
  
-To get a breakdown of the code and how each section of the web application functions just click (here)[]
+This site is mobile friendly! That doesnt mean I found *every edge case* but it is a comfortable application to use on any handheld device.
+
+
+<img src="./public/images/readme_photos/mobile_1.jpg" alt="hero image" style="width: 256px; border-radius: 5px 5px 5px 5px; margin: 1em"/>
+<img src="./public/images/readme_photos/mobile_2.jpg" alt="hero image" style="width: 256px; border-radius: 5px 5px 5px 5px; margin: 1em"/>
+
+
+Even the resume section has been preped so that you may view the content on the go.
+
+
+<img src="./public/images/readme_photos/mobile_3.jpg" alt="hero image" style="width: 256px; border-radius: 5px 5px 5px 5px; margin: 1em"/>
+
+This site also uses **MVC** *(Model View Controller )* standards. Feel free to check out the code.
+
+ <img src="./public/images/readme_photos/mvc.jpg" alt="hero image" style="width: 256px; border-radius: 5px 5px 5px 5px; margin: 1em"/>
 
 ## Coming soon
 ---
