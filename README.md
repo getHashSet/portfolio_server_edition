@@ -18,6 +18,8 @@ Continue reading to discover how the site works, how data is collected and displ
 ## Index 
  
 [Goal](#Goal) 
+
+[Stack](#Stack)
  
 [Hero](#Hero) 
  
@@ -54,6 +56,32 @@ And to demonstrate my skill level in a MVC full-stack server based application.
 (See Tech used)
 
  
+## Stack
+---
+
+* Front End
+    * HTML with **Handlebars**
+    * CSS with SCSS using **Pre Pros**
+    * javascript using **jQuery**
+* Back End
+    * MVC
+    * Node.js
+    * Express
+    * npm
+    * SQL
+    * Heroku
+
+* Frameworks, Libraries, and Packages *oh my*
+    * GSAP
+    * ScrollMagic
+    * sequelize
+    * axios
+    * morgan
+    * lint
+    * cheerio
+    * identicon
+
+
 ## Hero
 ---
  
@@ -104,11 +132,61 @@ Using this collected data the section is built.
 
 The initial page load is from a cached pull that the server makes once a week (handling null values and edge cases to prevent issues for storing in the noSQL database.)
 
-But wait, theirs more!
+**Under the hood**
+This application works by making calls to the [github API](https://developer.github.com/v3/); see `git.js` for more details.
+This uses both `GET` and `POST` requests using *callback* functions.
+```javascript
+ $.ajax({
+        url: `/scrape/git`,
+        method: "POST",
+        data: { git: gitObj.link}
+    })
+    .then(function(scrapeData) {
+
+        gitBlocks.html(scrapeData[0].html);
+
+        ////////////
+        // This call fills out pinned items using git data.
+        ////////////
+
+        $.ajax({
+            url: `${gitObj.repos}`,
+            method: "GET"
+        })
+        .then(function(git_repo_data){ ...
+```
+
+**What you can't see**
+This web application will also reach out to github and collect home-page data for public profiles on search and return them to the page.
+*(I've added a few fun buttons to mix as well)*
+```javascript
+app.post("/scrape/git", function (req, res) {
+  // view object returned on the server. //
+  // console.log(req.body.git);
+
+  axios.get(req.body.git)
+    .then(function (responseFromGit) {
+        
+      let $ = cheerio.load(responseFromGit.data);
+      let gitData = [{ key: "value" }];
+
+      let arrayOfPinnedObj = [];
+      let arrayOfHashObj = [];
+      let arrayOfImages = [];
+
+      $('.js-yearly-contributions').each(function (i, element) {
+        gitData[0].totalContributionsThisYear = Number($(element).children().children("h2").text().slice(7, $(element).children().children("h2").text().indexOf(" con")));
+        gitData[0].html = $(element).html();
+
+      });
+```
+When a `req` *(request)* comes into the route this server will perform both an `axios` call and a `cheerio` parse and `res` *(respond)* back to the client the scraped data. The data is collected before it is returned. This makes the request smaller.
+
+**But wait, theirs more!**
 
 Any visitor to the web application can enter a GitHub user name and it will display their information in the same way live on screen. (With some hidden bells and whistles for users who have filled out optional fields in github)
 
-Give it a shot by clicking (here)[#] 
+Give it a shot by clicking [here](getHashSet.com/#c4);
 
  
 ## Section - Timeline
@@ -134,8 +212,101 @@ It was added to every section on the right hand side. As you enter the section i
 
  Some examples:
 
- 
- 
+**On ready and a small Global scope**
+```javascript
+$(document).ready(function() {
+  console.log("by Matthew Carpenter");
+  console.log("matthew@getHashSet.com");
+  console.log("https://github.com/getHashSet");
+  console.log("https://linkedin.com/in/matthewcarpenter22");
+  console.log("--");
+
+  //////////////////////////////////////////
+  // global variables
+  //////////////////////////////////////////
+
+  let deckLoadsHere = $("#projects");
+  let project_array = [];
+
+  //////////////////////////////////////////
+  // card objects
+  //////////////////////////////////////////
+
+  // create an object constructor for the cards
+  function Project(_title, _description, _stack_used, _project_url, _image_url)
+    {
+    this.title = _title;
+    this.image = _image_url;
+    this.project_url = _project_url;
+    this.stack_used = _stack_used;
+    this.description = _description;
+    };
+```
+
+**window on scroll event**
+```javascript
+$(window).on('resize scroll', function() {
+
+    if ($('.deck').isInViewport() && rollProjects == false) {
+        rollProjects = true; 
+        rollUp();
+    } else if (!$('.deck').isInViewport() && rollProjects == true) {
+        rollProjects = false;
+    };
+};
+```
+
+**SASS**
+```css
+#hero {
+	min-height: 100vh;
+	background-image: url(../../images/person-in-front-of-laptop-on-brown-wooden-table-2115217.jpg);
+	background-attachment: fixed;
+	background-position: top right;
+	background-size: cover;
+	color: #fff;
+
+	div {
+		position: absolute;
+		bottom: 10%;
+		left: 5%;
+
+		h1 {
+			font-size: 5em;
+			font-weight: 700;
+
+			span {
+				font-size: 1em;
+				display: inline-block;
+			}
+		}
+
+		h2 {
+			font-size: 1.4em;
+		}
+    }
+}
+```
+
+**handlebars** 
+```html
+<section id="c4" class="chapter">
+
+    <div class="block_top">
+
+    </div>
+
+    {{!-- github API calls, Scrape github.com/getHashSet --}}
+    {{!-- commit box --}}
+    {{!-- recent projects (QR code API) --}}
+    {{!-- recent comment --}}
+
+    <div class="github">
+
+```
+
+---
+
  <img src="./public/images/readme_photos/my_card.jpg" alt="hero image" style="width: 512px; border-radius: 0 5px 0 5px; margin: 1em;"/>
 
 This section produces a business card containing a QR link to my professional materials. Each business card is color coded and displays a QR code scannable by any smart device. 

@@ -79,8 +79,8 @@ $(document).ready(function() {
                 data: { git: gitObj.link}
             })
             .then(function(scrapeData) {
-                console.log("scrapeData")
-                console.log(scrapeData);
+                //console.log("scrapeData")
+                //console.log(scrapeData);
 
                 gitBlocks.html(scrapeData[0].html);
 
