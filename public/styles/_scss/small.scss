@@ -87,6 +87,15 @@
         display: none;
     }
 
+    
+	h2:first-child {
+		display: none;
+	}
+
+	h2:nth-child(2) {
+		display: block;
+	}
+
     .sub_title {
         h3:first-child {
             display: none;

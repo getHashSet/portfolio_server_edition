@@ -45,6 +45,12 @@
 #c7 .business_card {
   display: none; }
 
+#c7 h2:first-child {
+  display: none; }
+
+#c7 h2:nth-child(2) {
+  display: block; }
+
 #c7 .sub_title h3:first-child {
   display: none; }
 

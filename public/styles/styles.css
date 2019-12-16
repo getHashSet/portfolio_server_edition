@@ -901,6 +901,10 @@ section {
     font-weight: 700;
     width: 100%;
     padding: .5em 0; }
+  #c7 h2:first-child {
+    display: block; }
+  #c7 h2:nth-child(2) {
+    display: none; }
   #c7 .sub_title {
     width: 100%;
     display: -webkit-box;
