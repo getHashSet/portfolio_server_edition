@@ -45,6 +45,12 @@
 #c7 .business_card {
   display: none; }
 
+#c7 .sub_title h3:first-child {
+  display: none; }
+
+#c7 .sub_title h3:last-child {
+  display: block; }
+
 #c8 #hidden_section .resume_wrap {
   margin-top: 7.5em; }
 

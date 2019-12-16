@@ -969,6 +969,14 @@ section {
 			padding: 1em;
 			margin: 0 3em;
 		}
+
+		h3:first-child {
+			display: block;
+		}
+
+		h3:last-child {
+			display: none;
+		}
 	}
 
 	.business_card {
@@ -1087,6 +1095,7 @@ section {
 
 #c8 {
 	display: none;
+	background-color: #525659;
 
 	#hidden_section {
 		position: relative;

@@ -915,6 +915,10 @@ section {
       max-width: 800px;
       padding: 1em;
       margin: 0 3em; }
+    #c7 .sub_title h3:first-child {
+      display: block; }
+    #c7 .sub_title h3:last-child {
+      display: none; }
   #c7 .business_card {
     margin: 2em;
     padding: 1em;
@@ -1021,7 +1025,8 @@ section {
     transform: translateY(4px); }
 
 #c8 {
-  display: none; }
+  display: none;
+  background-color: #525659; }
   #c8 #hidden_section {
     position: relative;
     width: 100%;

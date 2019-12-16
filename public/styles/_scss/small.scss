@@ -86,6 +86,16 @@
     .business_card {
         display: none;
     }
+
+    .sub_title {
+        h3:first-child {
+            display: none;
+        }
+
+        h3:last-child {
+            display: block;
+        }
+    }
 }
 
 #c8 {
