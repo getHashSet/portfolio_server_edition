@@ -188,18 +188,18 @@ $(".social").click(function() {
 const sectionQuoteData = sectionClicked => {
   switch (sectionClicked) {
     case "projects":
-      return `This is the projects section.`;
+      return `<h2>Projects</h2> <div></div> <p>I have had the opportunity to work an a wide array of projects. From web applications given life by javascript to Online VR programs running on C#.</p> <h3>Start =&gt; Now</h3> <p>My very first javascrip application is showcased right here! It's called the <strong>Box Playground</strong> and it was how I was able to teach myself CSS and understand how javascript communicates with the DOM. Even though I have come a long way (React.js, Node.js, ES6) I will always be proud to show off my first web application.</p>`;
     case "git":
-      return `This is the git hub section. And boy is it a cool part of this app. Github API provides quite a bit of data on its own. But if you're familiar with the github object then you know it doesnt return all the data you are seeing here on this app. Try and go to your browser's console and type the following line git('getHashSet') this will display the data I parsed through using ajax.`;
+      return `<h2>Git</h2> <p>Source control is a staple in the dev community. It's important that future employers and project leads review git repos and code before selecting a developer.</p> <h3>API</h3> <p>github offers a really fun API that will return the data of a user/ their repos/ how they interact with github and even the messages they leave while they commit. I have chosen to use this as a kickoff point.</p> <p>You may have noticed that if you return a GET request to the API that you are not returned the "pinned" data or the "calendar" that everyone loves to fill.</p> <p>Then how did I get it I wonder?</p>`;
     case "skills":
-      return `<ul> <li>HTML5</li> <li>CSS3</li> <li>ES6</li> </ul>`;
+      return `<h2>Skills</h2> <p>In this section I wanted to showcase all of the skills I am comfortable using in a professional workplace (or Agile work place). But I didnt want to display it in grid or flex layout. Instead I used CSS animations and some tricks during my research to display them as a real time typing event!</p> <h3>The List</h3> <p> Full list coming to README.md soon.</p>`;
     case "history":
-      return `<h2>These are the places I have worked. For a copy of my resume continue to the bottom of the page and you can request one right away by inputing your email and company name or by just asking matthew@getHashSet.com</h2>`;
+      return `<h2>Job History</h2> <p>See a full copy of my resume at the bottom of the page.</p> <p>Details will be added here in a future update.</p>`;
     case "readme":
       return `Good coding standards are important. This applicaiton was built using those standards. In addtion I am comfortable using lint and respond well to feedback!`;
     case "contact":
-      return `<p>Feel free to get in touch.</p>`;
+      return `<h2>Contact Me</h2> <p>Feel free to get in touch. I love to talk code and I alsways want to be involved with a good npm package or freelance project!</p> <p>If you're a learning student here to ask for advice or want to know more about the coding bootcamp I took, be sure to put that in your email.</p>`;
       default:
-      return `<h2>Card</h2>`;
+      return `<h2>This is a README.md tooltip</h2> <p>For more information visit the README.md file in the root directory on github. No need to post it here, I'm sure you'll find it somewhere on this page.</p>`;
   }
 };
