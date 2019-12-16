@@ -63,6 +63,8 @@ let refreshExamples = function() {
   });
 };
 
+$("#resume_image").attr("src", "../images/resume_blured.png");
+
 // handleFormSubmit is called whenever we submit a new example
 // Save the new example to the db and refresh the list
 let handleFormSubmit = function(event) {

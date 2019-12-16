@@ -322,12 +322,15 @@
         {{!-- Contact Me --}}
 
         <h2>
-            Contact Me
+            My Card
         </h2>
 
-        <h3>
-            I'll be glad to answer your questions!
-        </h3>
+        <div class="sub_title">
+            <h3>
+                Let's connect! Using the options to the left you can find ways to reach out to me about your project. To access a printable version of my resume all you need to do is enter your email address and name in section below.
+            </h3>
+        </div>
+       
 
         <div class="business_card">
             <div class="qr_code">
@@ -335,12 +338,14 @@
                     src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://linkedin.com/in/matthewcarpenter22"
                     alt="qr-data">
             </div>
-            <div class="bc_name"></div>
-            <div class="bc_linkedin"></div>
-            <div class="bc_email"></div>
+            <div class="bc_wrap">
+                <div class="bc_name">Matthew Carpenter</div>
+                <div class="bc_info_1"><a href="mailto:matthew@getHashSet.com?subject=Let's Connect!&body=Hello," target="_blank" rel="noopener noreferrer">matthew@getHashSet.com</a></div>
+                <div class="bc_info_2">Use your mobile device to scan the QR code!</div>
+            </div>
         </div>
 
-        <div class="contact_input">
+        {{!-- <div class="contact_input">
             <form class="contact_wrap">
 
                 <input type="text" placeholder="Name" />
@@ -353,19 +358,19 @@
                 </span>
 
             </form>
-        </div>
+        </div> --}}
 
-        <p>
+        {{!-- <p>
             To view the printable version of my resume just enter your information above.
             And that will unlock the next section.
-        </p>
+        </p> --}}
 
         <div class="locked_section">
             <span>
                 <ion-icon name="ios-lock"></ion-icon>
             </span>
-            <input type="email" placeholder="Email address" />
-            <input type="text" placeholder="Your name" />
+            <input id="email_input" type="email" placeholder="Email address" />
+            <input id="name_input" type="text" placeholder="Name or Company Name" />
             <div>
                 <div class="input_button"> Unlock </div>
             </div>
@@ -381,7 +386,7 @@
             <div class="social social_link">
                 <ion-icon name="ios-link"></ion-icon>
             </div>
-            
+
             <div class=" social social_linkedin">
                 <ion-icon name="logo-linkedin"></ion-icon>
             </div>
@@ -414,6 +419,20 @@
     <section id="c8" class="chapter">
 
         {{!-- locked --}}
+
+    <div id="hidden_section">
+        
+        <div class="resume_wrap">
+            <img id="resume_image" alt="blured resume" src="../public/images/resume_blured.png" />
+        </div>
+
+        <div class="resume_save_options">
+            <div id="download"><a href="../public/images/Matthew_Carpenter_Resume.PDF" download=""><ion-icon name="ios-save"></ion-icon></a></div>
+            <div id="print"><ion-icon name="ios-print"></ion-icon></div>
+            <div id="email"><a><ion-icon name="ios-mail"></ion-icon></a></div>
+        </div>
+
+    </div>
 
         {{!-- Email to Unlock --}}
         {{!-- linkedin --}}
@@ -459,3 +478,4 @@
 <script src="https://cdn.jsdelivr.net/npm/jdenticon@2.2.0"></script>
 <script src="/js/about_me.js"> // about me scroller </script>
 <script src="/js/animation_station.js"> // animations for index </script>
+<script src="/js/hidden_section.js"> // input validation using RegEx </script>

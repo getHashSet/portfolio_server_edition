@@ -111,11 +111,18 @@ $( document ).ready(function() {
        
     }
 
-
+    ///////
+    // off switch
+    ///////
+    
     let rollProjects = false;
     let work1 = false;
     let work2 = false;
     let work3 = false;
+
+    /////////////////////////
+    // window on resize and on scroll
+    /////////////////////////
 
     $(window).on('resize scroll', function() {
 

@@ -132,6 +132,13 @@ $(document).ready(function() {
                         gitObj.pinnedProjects.forEach(pinnedItem => {
                             if (gitRepo.name == pinnedItem){
 
+                                // check to see if about section is short or not filled in.
+                                // if it is short then replace it with some text that would be used for the link.
+                                
+                                gitRepo.description == null || gitRepo.description.length < 7 ?
+                                $(`.${gitRepo.name.toLowerCase()}_about`)[0].innerHTML = `Learn more by visiting the git repo <a href="${gitRepo.svn_url}">here</a>.` :
+                                $(`.${gitRepo.name.toLowerCase()}_about`)[0].innerHTML = gitRepo.description;
+
                                 //console.log(`--------------------------------------------`)
 
                                 // console.log(`Name: ${gitRepo.name}`);
@@ -147,7 +154,6 @@ $(document).ready(function() {
                                 // console.log(`--------------------------------------------`)
 
                                $(`.${gitRepo.name.toLowerCase()}_h2`)[0].innerHTML = gitRepo.name;
-                               $(`.${gitRepo.name.toLowerCase()}_about`)[0].innerHTML = gitRepo.description;
                                $(`.${gitRepo.name.toLowerCase()}_git-network`)[0].setAttribute("content", `This project has been forked ${gitRepo.forks_count} times.`);
                                $(`.${gitRepo.name.toLowerCase()}_eye`)[0].setAttribute("content", `This repo has ${gitRepo.watchers_count} watchers.`);
                                $(`.${gitRepo.name.toLowerCase()}_star`)[0].setAttribute("content", `This project has ${gitRepo.stargazers_count} stars.`);

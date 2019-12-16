@@ -662,6 +662,18 @@ section {
 						p {
 							text-align: start;
 						}
+
+						a {
+							color: $success_highlight;
+							border: none;
+							text-decoration: none;
+							font-weight: 400;
+						}
+
+						a:active,
+						a:hover {
+							color: $success;
+						}
 					}
 
 					p {
@@ -945,10 +957,18 @@ section {
 		padding: .5em 0;
 	}
 
-	h3 {
-		font-size: 1em;
-		font-weight: 200;
+	.sub_title {
 		width: 100%;
+		display: flex;
+		justify-content: center;
+
+		h3 {
+			font-size: 1em;
+			font-weight: 200;
+			max-width: 800px;
+			padding: 1em;
+			margin: 0 3em;
+		}
 	}
 
 	.business_card {
@@ -957,23 +977,39 @@ section {
 		width: 350px;
 		height: 150px;
 		background-color: #fff;
-		box-shadow: 1px 1px 3px $dark;
+		display: flex;
+		flex-wrap: nowrap;
+		justify-content: center;
 
 		.qr_code {
-
 		}
 
-		.bc_name {
+		.bc_wrap {
+			color: $dark;
+			text-align: start;
+			padding: 0 1em 1e 1em;
+			margin: 0 1em 1em 1em;
+			text-shadow: none;
+			font-size: .75em;
 
+			.bc_name {
+				padding-bottom: 4px;
+				border-bottom: 1px solid rgba($dark, 1);
+			}
+	
+			.bc_info_1 {
+				padding: 2px 0;
+			}
+	
+			.bc_info_2 {
+				padding: 1em 0 1em 0;
+			}
+
+			a {
+				color: rgba($dark, 1);
+			}
 		}
-
-		.bc_linkedin {
-
-		}
-
-		.bc_email {
-
-		}
+	
 	}
 
 	.contact_input {
@@ -1046,6 +1082,57 @@ section {
 
 	.input_button:active {
 		transform: translateY(4px);
+	}
+}
+
+#c8 {
+	display: none;
+
+	#hidden_section {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		.resume_wrap {
+			width: 800px;
+			display: flex;
+			justify-content: center;
+			box-shadow: 2px 2px 5px rgba($dark, .7);
+			margin: 2em;
+
+			img {
+				width: 100%;
+			}
+		}
+
+		.resume_save_options {
+			position: absolute;
+			top: 1em;
+			right: 1em;
+			margin: 1em;
+			flex-wrap: nowrap;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			a {
+				color: #fff;
+			}
+
+			div:active {
+				transform: translateY(5px);
+			}
+
+			div {
+				padding: 1em;
+				background-color: rgba($dark, .7);
+				color: #fff;
+
+			}
+		}
 	}
 }
 

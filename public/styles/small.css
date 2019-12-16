@@ -45,6 +45,9 @@
 #c7 .business_card {
   display: none; }
 
+#c8 #hidden_section .resume_wrap {
+  margin-top: 7.5em; }
+
 .social_wrap {
   display: none; }
 

@@ -635,6 +635,14 @@ section {
                 transform: translateY(5px); }
             #c4 .github #git_pinned_items .card_wrap .info .title_links p {
               text-align: start; }
+            #c4 .github #git_pinned_items .card_wrap .info .title_links a {
+              color: #2ecc71;
+              border: none;
+              text-decoration: none;
+              font-weight: 400; }
+            #c4 .github #git_pinned_items .card_wrap .info .title_links a:active,
+            #c4 .github #git_pinned_items .card_wrap .info .title_links a:hover {
+              color: #27ae60; }
           #c4 .github #git_pinned_items .card_wrap .info p {
             width: 100%;
             height: auto;
@@ -893,18 +901,50 @@ section {
     font-weight: 700;
     width: 100%;
     padding: .5em 0; }
-  #c7 h3 {
-    font-size: 1em;
-    font-weight: 200;
-    width: 100%; }
+  #c7 .sub_title {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center; }
+    #c7 .sub_title h3 {
+      font-size: 1em;
+      font-weight: 200;
+      max-width: 800px;
+      padding: 1em;
+      margin: 0 3em; }
   #c7 .business_card {
     margin: 2em;
     padding: 1em;
     width: 350px;
     height: 150px;
     background-color: #fff;
-    -webkit-box-shadow: 1px 1px 3px #2d3436;
-    box-shadow: 1px 1px 3px #2d3436; }
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center; }
+    #c7 .business_card .bc_wrap {
+      color: #2d3436;
+      text-align: start;
+      padding: 0 1em 1e 1em;
+      margin: 0 1em 1em 1em;
+      text-shadow: none;
+      font-size: .75em; }
+      #c7 .business_card .bc_wrap .bc_name {
+        padding-bottom: 4px;
+        border-bottom: 1px solid #2d3436; }
+      #c7 .business_card .bc_wrap .bc_info_1 {
+        padding: 2px 0; }
+      #c7 .business_card .bc_wrap .bc_info_2 {
+        padding: 1em 0 1em 0; }
+      #c7 .business_card .bc_wrap a {
+        color: #2d3436; }
   #c7 .contact_input {
     width: 100%;
     display: -webkit-box;
@@ -979,6 +1019,61 @@ section {
     -webkit-transform: translateY(4px);
     -ms-transform: translateY(4px);
     transform: translateY(4px); }
+
+#c8 {
+  display: none; }
+  #c8 #hidden_section {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
+    #c8 #hidden_section .resume_wrap {
+      width: 800px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-shadow: 2px 2px 5px rgba(45, 52, 54, 0.7);
+      box-shadow: 2px 2px 5px rgba(45, 52, 54, 0.7);
+      margin: 2em; }
+      #c8 #hidden_section .resume_wrap img {
+        width: 100%; }
+    #c8 #hidden_section .resume_save_options {
+      position: absolute;
+      top: 1em;
+      right: 1em;
+      margin: 1em;
+      -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center; }
+      #c8 #hidden_section .resume_save_options a {
+        color: #fff; }
+      #c8 #hidden_section .resume_save_options div:active {
+        -webkit-transform: translateY(5px);
+        -ms-transform: translateY(5px);
+        transform: translateY(5px); }
+      #c8 #hidden_section .resume_save_options div {
+        padding: 1em;
+        background-color: rgba(45, 52, 54, 0.7);
+        color: #fff; }
 
 #user-activity-overview {
   display: none; }
