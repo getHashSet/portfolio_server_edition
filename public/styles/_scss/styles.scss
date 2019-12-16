@@ -1163,6 +1163,7 @@ section {
 	right: 0;
 	border-radius: 5px 0 0 5px;
 	color: #fff;
+	z-index: 9999;
 
 	.side_menu_item {		
 		display: flex;
@@ -1379,7 +1380,7 @@ section {
 	max-width: 1080px;
 	height: 70vh;
 	min-height: 70vh;
-	padding: 1em;
+	padding: 3em;
 	background-color: #fff;
 	display: none;
 	outline: 8px solid #fff;
@@ -1407,6 +1408,28 @@ section {
 
 	.close_button:active {
 		transform: translateY(4px);
+	}
+
+	h2 {
+		text-transform: uppercase;
+		font-size: 2em;
+		font-weight: 700;
+		display: block;
+		margin-top: 1em;
+		border-bottom: 1px solid $dark;
+	}
+
+	h3 {
+		font-size: 1.5em;
+		font-weight: 700;
+		display: block;
+		margin-top: 1em;
+	}
+
+	p {
+		font-size: 1em;
+		display: block;
+		margin-top: 1em;
 	}
 }
 
