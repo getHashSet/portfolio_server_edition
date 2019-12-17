@@ -44,7 +44,7 @@ $("#download").click(function() {
 });
 
 $("#print").click(function() {
-    let w = window.open("../images/Matthew_Carpenter_Resume.pdf"); //Required full file path.
+    let w = window.open("https://gethashset.com/files/Matthew_Carpenter_Resume.pdf"); //Required full file path.
         w.print();
         // setInterval(function() {
         //     window.location.reload(true);
