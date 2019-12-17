@@ -1034,7 +1034,7 @@ section {
   #c8 #hidden_section {
     position: relative;
     width: 100%;
-    height: 100%;
+    height: auto;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1056,7 +1056,8 @@ section {
       box-shadow: 2px 2px 5px rgba(45, 52, 54, 0.7);
       margin: 2em; }
       #c8 #hidden_section .resume_wrap img {
-        width: 100%; }
+        width: 100%;
+        height: auto; }
     #c8 #hidden_section .resume_save_options {
       position: absolute;
       top: 1em;
