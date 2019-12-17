@@ -1115,8 +1115,10 @@ section {
 
 		.resume_wrap {
 			width: 800px;
+			height: auto;
 			display: flex;
 			justify-content: center;
+			align-items: center;
 			box-shadow: 2px 2px 5px rgba($dark, .7);
 			margin: 2em;
 
