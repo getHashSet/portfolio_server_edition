@@ -1029,6 +1029,7 @@ section {
     transform: translateY(4px); }
 
 #c8 {
+  min-height: 100vh;
   display: none;
   background-color: #525659; }
   #c8 #hidden_section {
