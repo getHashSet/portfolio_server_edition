@@ -71,7 +71,7 @@ $(document).ready(function() {
   let project_4 = new Project (
     "Banner Ads",
     "Google Ads made to order.",
-    ["HTML", "GSAP", "Google Web Design"],
+    ["HTML", "Google Web Design"],
     "https://webdesigner.withgoogle.com/",
     "../images/ads.jpg"
   );

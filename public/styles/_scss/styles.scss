@@ -164,10 +164,11 @@ nav {
 
 #hero {
 	min-height: 100vh;
-	background-image: url(../../images/person-in-front-of-laptop-on-brown-wooden-table-2115217.jpg);
+	background-image: url(../../images/hero_top.jpg);
+	background-repeat: no-repeat;
 	background-attachment: fixed;
-	background-position: top right;
-	background-size: cover;
+	background-position: top center;
+	background-size: cover; 
 	color: #fff;
 
 	div {

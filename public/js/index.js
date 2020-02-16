@@ -4,6 +4,7 @@ let $exampleDescription = $("#example-description");
 let $submitBtn = $("#submit");
 let $exampleList = $("#example-list");
 
+
 ////////////////////////
 // API routes
 ////////////////////////
