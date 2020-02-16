@@ -41,7 +41,7 @@ function validateEmail(mail) {
 
 $("#download").click(function() {
 
-});
+}); 
 
 $("#print").click(function() {
     let w = window.open("https://matthewcarpenter.herokuapp.com/images/Matthew_Carpenter_Resume.PDF"); //Required full file path.

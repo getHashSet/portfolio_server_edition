@@ -46,7 +46,7 @@ $(document).ready(function() {
     "Servers",
     "Setting up a mySQL or noSQL database can be hard; Let me help. I have experience setting up small servers and local host enviornments.",
     ["Node.js", "SQL", "noSQL", "XAMPP"],
-    "https://getHashSet.com",
+    "https://github.com/getHashSet/servers",
     "../images/server.jpg"
   );
   // add to project_array
@@ -59,7 +59,7 @@ $(document).ready(function() {
     "README.md Builder",
     "This handy app makes starting your documentation easier. While you're there feel free to check out the rest of the site too.",
     ["SCSS", "ES6", "Markup"],
-    "https://getHashSet.com",
+    "http://www.gethashset.com/pages/readme-index.html",
     "../images/computer.jpg"
   );
   // add to project_array
@@ -70,9 +70,9 @@ $(document).ready(function() {
   ////////////
   let project_4 = new Project (
     "Banner Ads",
-    "Google Ads made to order",
-    ["HTML", "SCSS", "QR API", "GSAP"],
-    "https://github.com/getHashSet",
+    "Google Ads made to order.",
+    ["HTML", "GSAP", "Google Web Design"],
+    "https://webdesigner.withgoogle.com/",
     "../images/ads.jpg"
   );
   // add to project_array
@@ -82,9 +82,9 @@ $(document).ready(function() {
   // project 5
   ////////////
   let project_5 = new Project (
-    "Virtual Reality",
-    "Create a training sim that places your employees in the enviornment? Look no further.",
-    ["C#", "noSQL", "Unity"],
+    "github",
+    "This Portfolio includes a web scraper and API requests to github! Scroll down to see more.",
+    ["javascript", "noSQL", "git", "API"],
     "https://github.com/getHashSet",
     "../images/vr.jpg"
   );
@@ -96,9 +96,9 @@ $(document).ready(function() {
   ////////////
   let project_6 = new Project (
     "Comming Soon",
-    "Tom's website is getting a facelift. Check in this January to see what comes next.",
+    "Tom's website is getting a facelift. Check out his stunning new portfolio.",
     ["Node.js", "no SQL", "API", "React.js"],
-    "https://getHashSet.com",
+    "https://tubacwoodworks.herokuapp.com",
     "../images/tomssite.jpg"
   );
   // add to project_array
